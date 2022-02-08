@@ -1,2 +1,2 @@
-# CS20
-Assignments completed in CS20: Web Programming
+# CS20: Assignment 1
+Assignment1: Getting on the Web
