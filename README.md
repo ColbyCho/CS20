@@ -1,2 +1,3 @@
 # CS20
-Assignment1: Getting on the Web
+Assignment1: Onboarding
+Assignment2: Get on the Web
