@@ -1,2 +1,2 @@
-# CS20: Assignment 1
+# CS20
 Assignment1: Getting on the Web
