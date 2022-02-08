@@ -138,7 +138,7 @@ ul li:hover {
     padding: 100px;
     background-size: cover;
     background-position: center;
-    background-image: url("../images/wafflebanner.jpg");
+    background-image: url("../images/contact-banner.jpg");
     z-index: -1;
 }
 
@@ -169,6 +169,7 @@ img {
 .contact-info {
     color: cornsilk;
     margin-top: 30px;
+    width: 100%;
 }
 
 span {
@@ -185,4 +186,5 @@ footer {
     background-color: #4a3523;
     padding: 20 20 20px;
     color: cornsilk;
+    border: solid white;
 }
