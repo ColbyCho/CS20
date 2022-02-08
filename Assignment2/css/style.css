@@ -221,7 +221,7 @@ ul li:hover {
     overflow: hidden;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-image: url("https://www.colbycho.github.io/CS20/Assignment2//images/wood.jpg");
+    background-image: url("https://www.colbycho.github.io/CS20/Assignment2/images/wood.jpg");
     background-size: cover;
     z-index: -10;
 }
