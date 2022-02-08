@@ -167,12 +167,14 @@ img {
 }
 
 .contact-info {
+    color: cornsilk;
     margin-top: 30px;
+    background-color: rebeccapurple;
     border: solid white;
 }
 
 span {
-    font-size: 32px;
+    font-size: 42px;
 }
 
 @media only screen and (max-width: 1400px) {
