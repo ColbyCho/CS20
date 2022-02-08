@@ -138,7 +138,7 @@ ul li:hover {
     padding: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url("https://www.colbycho.github.io/CS20/Assignment2/images/wafflebanner.jpg");
+    background-image: url("../images/wafflebanner.jpg");
     z-index: -1;
 }
 
@@ -221,7 +221,7 @@ ul li:hover {
     overflow: hidden;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-image: url("https://www.colbycho.github.io/CS20/Assignment2/images/wood.jpg");
+    background-image: url("../images/wood.jpg");
     background-size: cover;
     z-index: -10;
 }
