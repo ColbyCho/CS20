@@ -138,7 +138,7 @@ ul li:hover {
     padding: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url("../images/wafflebanner.jpg");
+    background-image: url("../images/lights.jpg");
     z-index: -1;
 }
 
@@ -157,75 +157,6 @@ ul li:hover {
     }
 }
 
-.Step {
-    background-color: #4a3523;
-    color: cornsilk;
-    font-size: 32px;
-    padding: 20px;
-    box-shadow: 0px 20px 50px #121212;
-    z-index: 7;
-}
-
-.step1 {
-    background-color: cornsilk;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 60px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 20px 50px #121212;
-}
-
-.step2 {
-    background-color: cornsilk;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-    
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 60px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 20px 50px #121212;
-}
-
-.step1 li {
-    color: #4a3523;
-    font-size: 24px;
-    padding: 0;
-    margin-left: 20px;
-}
-
-.step2 li {
-    color: #4a3523;
-    font-size: 24px;
-    padding: 0;
-    margin-left: 20px;
-}
-
-.choose-waffle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    overflow: hidden;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-image: url("../images/wood.jpg");
-    background-size: cover;
-    z-index: -10;
-}
-
 img {
     margin-left: 10px;
     margin-right: 10px;
@@ -235,21 +166,25 @@ img {
     box-shadow: 0px 20px 50px #121212;
 }
 
+.contact-info {
+    color: cornsilk;
+    margin-top: 30px;
+    width: 100%;
+}
+
+span {
+    font-size: 36px;
+}
+
 @media only screen and (max-width: 1400px) {
     img {
         display: none;
     }
 }
 
-.sidebar {
-    padding-right: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    
-}
-
 footer {
     background-color: #4a3523;
     padding: 20 20 20px;
     color: cornsilk;
+    bottom: 0;
 }
