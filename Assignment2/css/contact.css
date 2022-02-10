@@ -184,9 +184,8 @@ span {
 
 footer {
     background-color: #4a3523;
-    padding-top: 30px;
-    padding-left: 20px;
-    padding-bottom: 20px;
+    padding: 20 20 20px;
+    margin-bottom: 0;
     color: cornsilk;
     bottom: 0;
 }
