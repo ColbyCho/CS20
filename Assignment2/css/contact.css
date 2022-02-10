@@ -169,6 +169,7 @@ img {
 .contact-info {
     color: cornsilk;
     margin-top: 30px;
+    margin-bottom: 200px;
     width: 100%;
 }
 
@@ -186,5 +187,5 @@ footer {
     background-color: #4a3523;
     padding: 20 20 20px;
     color: cornsilk;
-    bottom: 100vh;
+    bottom: 0;
 }
