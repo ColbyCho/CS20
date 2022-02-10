@@ -10,7 +10,6 @@
 
 html, body {
     background-color: #4a3523;
-    min-height: 100%;
 }
 
 h1 a {
@@ -186,7 +185,6 @@ span {
 footer {
     background-color: #4a3523;
     padding: 20 20 20px;
-    margin-bottom: 0;
     color: cornsilk;
-    bottom: 0;
+    bottom: 100vh;
 }
