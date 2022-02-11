@@ -135,7 +135,7 @@ ul li:hover {
 }
 
 .hero-image {
-    padding: 200px;
+    padding: 100px;
     background-size: cover;
     background-position: center;
     background-image: url("../images/lights.jpg");
