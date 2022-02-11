@@ -175,8 +175,9 @@ img {
     margin-top: 30px;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 30px;
     box-shadow: 0px 20px 50px #121212;
-    width: 100%;
+    /* width: 100%; */
 }
 
 span {
