@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Joe's Hotdog Stand</title>
+    <link rel='stylesheet' href='styles.css' type='text/css'/> 
+  </head>
+  <body>
+      <header>
+        <h1>Joe's Hotdog Stand</h1>
+      </header>
+      <div id="flex-container">
+        
+        <div id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li>Hotdogs: $3.75</li>
+                <li>French Fries: $2.00</li>
+                <li>Drinks: $1.80</li>
+            </ul>
+        </div>
+        <img src="hotdog.jpg" alt="hot dog">
+        <!-- <img src="stand.jpg" alt="hot dog stand"> -->
+      </div>
+      <!-- <h2>Your Order Summary</h2> -->
+      <div id="order-summary">
+        <h2>Your Order Summary</h2>
+        <script>
+            var hotdogs = prompt("How many hotdogs would you like?", "");
+            var fries = prompt("How many french fries would you like?", "");
+            var drinks = prompt("How many drinks would you like?", "");
+  
+            document.write("Number of hotdogs: " + hotdogs + "<br/>");
+            document.write("Number of french fries: " + fries + "<br/>");
+            document.write("Number of drinks: " + drinks + "<br/>");
+            
+            var subtotal = (3.75 * hotdogs) + (2 * fries) + (1.8 * drinks);
+            
+            document.write("Subtotal: $" + (Math.round(subtotal * 100) / 100) + "<br/>");
+  
+            if (subtotal >= 20) {
+                subtotal = subtotal - (subtotal*=.10);
+                document.write("Subtotal with discount applied: $", (Math.round(subtotal * 100) / 100) + "<br/>");
+            }
+            
+            var tax = subtotal * .0625;
+            document.write("Tax: $" + (Math.round(tax * 100) / 100) + "<br/>");
+            
+            var final = subtotal + tax;
+            document.write("<br/>" + "Total: $" + (Math.round(final * 100) / 100) + "<br/>");
+        </script>
+      </div>
+      
+  </body>

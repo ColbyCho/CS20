@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Fugaz+One&family=Monoton&family=Orbitron:wght@900&family=Oswald:wght@500&family=Source+Code+Pro:wght@400;700&family=Ultra&display=swap');
+
+html, body {
+    font-family: 'Ultra', serif;
+    text-align: center;
+    background-color: chocolate;
+}
+
+header {
+    background-color: #F48E57;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: white;
+    font-size: 32px;
+}
+
+#flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+img {
+    width: 40%;
+    height: 40%;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: sandybrown;
+    padding: 10px;
+    width: 100vw;
+}
+
+h2 {
+    color: white;
+    font-size: 28px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    color: white;
+    font-size: 24px;
+}
+
+li {
+    padding-bottom: 5px;
+}
+
+hr {
+    border: solid 2px sandybrown;
+    width: 30vw;
+}
+
+#order-summary {
+    background-color: sienna;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+}
