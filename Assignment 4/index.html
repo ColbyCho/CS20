@@ -24,7 +24,8 @@
       </div>
       <div id="order-summary">
         <h2>Your Order Summary</h2>
-        <script>
+        <div>
+          <script>
             var hotdogs = prompt("How many hotdogs would you like?", "");
             var fries = prompt("How many french fries would you like?", "");
             var drinks = prompt("How many drinks would you like?", "");
@@ -48,11 +49,14 @@
             var final = subtotal + tax;
             document.write("<br/>" + "Total: $" + (Math.round(final * 100) / 100) + "<br/>");
         </script>
-        <script>
-          document.write(hotdogs + "<br/>");
-          document.write(fries + "<br/>");
-          document.write(drinks + "<br/>");
-        </script>
+        </div>
+        <div>
+          <script>
+            document.write(hotdogs + "<br/>");
+            document.write(fries + "<br/>");
+            document.write(drinks + "<br/>");
+          </script>
+        </div>
       </div>
       
   </body>
