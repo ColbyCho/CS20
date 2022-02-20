@@ -73,5 +73,8 @@ hr {
     flex-direction: row;
     justify-content: center;
     gap: 20px;
+}
+
+#order-items, #order-prices {
     text-align: left;
 }
