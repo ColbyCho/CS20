@@ -23,8 +23,8 @@
         <img src="hotdog.jpg" alt="hot dog">
       </div>
       <div id="order-summary">
-        <h2>Your Order Summary</h2>
         <div>
+          <h2>Your Order Summary</h2>
           <script>
             var hotdogs = prompt("How many hotdogs would you like?", "");
             var fries = prompt("How many french fries would you like?", "");
@@ -55,6 +55,9 @@
             document.write(hotdogs + "<br/>");
             document.write(fries + "<br/>");
             document.write(drinks + "<br/>");
+            document.write((Math.round(subtotal * 100) / 100));
+            document.write((Math.round(tax * 100) / 100));
+            document.write((Math.round(final * 100) / 100));
           </script>
         </div>
       </div>
