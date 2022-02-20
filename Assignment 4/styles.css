@@ -57,11 +57,6 @@ li {
     padding-bottom: 5px;
 }
 
-hr {
-    border: solid 2px sandybrown;
-    width: 50%;
-}
-
 #order-summary {
     background-color: sienna;
     padding: 20px;
