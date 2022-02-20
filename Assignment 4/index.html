@@ -50,10 +50,10 @@
                   document.write("<br/>" + "Total: " + "<br/>");
               } else {
                 var tax = subtotal * .0625;
-                document.write("Tax: " + "<br/>");
+                document.write("Tax: " + "<br/><hr/>");
               
                 var final = subtotal + tax;
-                document.write("<hr/><br/>" + "Total: " + "<br/>");
+                document.write("<br/>" + "Total: " + "<br/>");
               }
           </script>
           </div>
@@ -66,8 +66,8 @@
               if (subtotal >= 20) {
                 document.write(("$" + Math.round(discount * 100) / 100) + "<br/>");
               }
-              document.write(("$" + Math.round(tax * 100) / 100) + "<br/>");
-              document.write(("<hr/><br/>" + "$" + Math.round(final * 100) / 100) + "<br/>");
+              document.write(("$" + Math.round(tax * 100) / 100) + "<br/><hr/>");
+              document.write(("<br/>" + "$" + Math.round(final * 100) / 100) + "<br/>");
             </script>
           </div>
         </div>
