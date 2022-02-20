@@ -57,7 +57,7 @@ li {
 }
 
 hr {
-    border: solid 2px sandybrown;
+    border: solid 2px chocolate;
     width: 30vw;
 }
 
@@ -68,7 +68,6 @@ hr {
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    text-align: center;
 }
 
 #summary-flex {
