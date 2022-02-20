@@ -23,7 +23,7 @@
         <img src="hotdog.jpg" alt="hot dog">
       </div>
       <div id="order-summary">
-        <div>
+        <div id="order-items">
           <h2>Your Order Summary</h2>
           <script>
             var hotdogs = prompt("How many hotdogs would you like?", "");
@@ -36,26 +36,30 @@
             
             var subtotal = (3.75 * hotdogs) + (2 * fries) + (1.8 * drinks);
             
-            document.write("Subtotal: $" + (Math.round(subtotal * 100) / 100) + "<br/>");
+            document.write("Subtotal: $" + "<br/>");
   
             if (subtotal >= 20) {
                 subtotal = subtotal - (subtotal*=.10);
-                document.write("Subtotal with discount applied: $", (Math.round(subtotal * 100) / 100) + "<br/>");
+                discount = subtotal; //hasn't been pushed
+                document.write("Subtotal with discount applied: $" + "<br/>");
             }
             
             var tax = subtotal * .0625;
-            document.write("Tax: $" + (Math.round(tax * 100) / 100) + "<br/>");
+            document.write("Tax: $" + "<br/>");
             
             var final = subtotal + tax;
-            document.write("<br/>" + "Total: $" + (Math.round(final * 100) / 100) + "<br/>");
+            document.write("<br/>" + "Total: $" + "<br/>");
         </script>
         </div>
-        <div>
+        <div id="order-prices">
           <script>
             document.write(hotdogs + "<br/>");
             document.write(fries + "<br/>");
             document.write(drinks + "<br/>");
             document.write((Math.round(subtotal * 100) / 100));
+            if (subtotal >= 20) {
+              document.write((Math.round(discount * 100) / 100));
+            }
             document.write((Math.round(tax * 100) / 100));
             document.write((Math.round(final * 100) / 100));
           </script>
