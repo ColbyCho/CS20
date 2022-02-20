@@ -40,16 +40,21 @@
               document.write("Subtotal: " + "<br/>");
     
               if (subtotal >= 20) {
-                  subtotal = subtotal - (subtotal*=.10);
-                  discount = subtotal; //hasn't been pushed
+                  discount = subtotal - (subtotal*=.10);
                   document.write("Subtotal with discount applied: " + "<br/>");
+
+                  var tax = discount * .0625;
+                  document.write("Tax: " + "<br/>");
+              
+                  var final = discount + tax;
+                  document.write("<br/>" + "Total: " + "<br/>");
+              } else {
+                var tax = subtotal * .0625;
+                document.write("Tax: " + "<br/>");
+              
+                var final = subtotal + tax;
+                document.write("<br/>" + "Total: " + "<br/>");
               }
-              
-              var tax = subtotal * .0625;
-              document.write("Tax: " + "<br/>");
-              
-              var final = subtotal + tax;
-              document.write("<br/>" + "Total: " + "<br/>");
           </script>
           </div>
           <div id="order-prices">
@@ -62,7 +67,7 @@
                 document.write(("$" + Math.round(discount * 100) / 100) + "<br/>");
               }
               document.write(("$" + Math.round(tax * 100) / 100) + "<br/>");
-              document.write(("$" + Math.round(final * 100) / 100) + "<br/>");
+              document.write(("<br/>" + "$" + Math.round(final * 100) / 100) + "<br/>");
             </script>
           </div>
         </div>
