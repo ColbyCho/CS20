@@ -62,7 +62,7 @@ hr {
 
 #order-summary {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     background-color: sienna;
     padding: 20px;
@@ -73,7 +73,7 @@ hr {
 
 #summary-flex {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
 
