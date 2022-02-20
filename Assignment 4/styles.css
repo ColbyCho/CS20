@@ -71,6 +71,12 @@ hr {
     margin-top: 10px;
 }
 
+#summary-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #order-prices {
-    padding-top: 50px;
+    /* padding-top: 50px; */
 }
