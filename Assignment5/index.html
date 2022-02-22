@@ -22,7 +22,7 @@
             }
             document.write(pick[j] + "<br/>");
 
-            pick = pick.sort(); //sort the 5 unique numbers
+            pick = pick.sort((a, b) => a - b); //sort the 5 unique numbers
             document.write("pick after sorting: ");
             for (j = 0; j < 4; j++) { //print the numbers to the screen
                 document.write(pick[j] + ", ");
