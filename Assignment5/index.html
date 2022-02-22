@@ -11,6 +11,7 @@
             <h1>CS20 Lottery</h1>
         </header>
         <script>
+            document.write("Javascript");
             var numbers = new Array(5); //create a new array
             for (i = 0; i < 5; i++) { //push 5 unique numbers to the array
                 Array.push(Math.random() * 47 + 1); 
@@ -19,6 +20,7 @@
             Array.push(Math.random() * 17 + 1) //push the Lucky Ball
             for (j = 0; j < 5; j++) { //print the numbers to the screen
                 document.write("Picks: " + Array[j]);
+                console.log(Array[i]);
             }
 
             
