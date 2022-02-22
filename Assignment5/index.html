@@ -12,8 +12,11 @@
         </header>
         <script>
             var pick = [] //create a new empty array
-            for (i = 0; i < 5; i++) { //push 5 unique numbers to the array
-                pick.push(Math.ceil(Math.random() * 47 + 1)); 
+            while (pick.length < 6) { //push 5 numbers to the array
+                var randomNum = Math.floor(Math.random() * 47 + 1);
+                 //ensure that the numbers are unique, acknowledgements: https://mavtipi.medium.com/how-to-generate-unique-random-numbers-in-a-specified-range-in-javascript-80bf1a545ae7
+                if (pick.indexOf(randomNum) === -1) 
+                    pick.push(randomNum); 
             }
 
             document.write("pick before sorting: ");
@@ -30,7 +33,7 @@
             }
             document.write(pick[j] + "<br/>");
 
-            var luckyball = Math.ceil(Math.random() * 17 + 1);
+            var luckyball = Math.floor(Math.random() * 17 + 1);
             pick.push(luckyball); //push the Lucky Ball
             document.write("lucky ball: " + luckyball);
             document.write("<br/>");
@@ -38,7 +41,6 @@
             document.write("winning numbers and winning lucky ball: ");
             for (j = 0; j < 5; j++) { //print the numbers to the screen
                 document.write(pick[j] + ", ");
-                console.log(pick[i] + " ");
             }
             document.write(pick[j] + "<br/>");
 
@@ -48,6 +50,7 @@
                 for (l = 0; l < match.length; l++) {
                     if (pick[k] == match[l]) {
                         count++;
+                        console.log(count);
                     }
                 }
             }
