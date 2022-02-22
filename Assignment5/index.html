@@ -4,24 +4,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <Title>Assignment 5: Lottery Simulator</Title>
-        <link rel='stylesheet' href='css/style.css' type='text/css'/> 
+        <link rel='stylesheet' href='style.css' type='text/css'/> 
     </head>
     <body>
         <header>
             <h1>CS20 Lottery</h1>
         </header>
         <script>
-            document.write("Javascript");
-            var picks = [] //create a new empty array
+            var pick = [] //create a new empty array
             for (i = 0; i < 5; i++) { //push 5 unique numbers to the array
-                picks.push(Math.random() * 47 + 1); 
+                pick.push(Math.ceil(Math.random() * 47 + 1)); 
             }
-            picks.sort(); //sort the 5 unique numbers
-            picks.push(Math.random() * 17 + 1) //push the Lucky Ball
+
+            document.write("pick before sorting: ");
             for (j = 0; j < 5; j++) { //print the numbers to the screen
-                document.write("Picks: " + picks[j]);
-                console.log(picks[i]);
+                document.write(pick[j]) + ", ");
+                console.log(pick[i] + " ");
             }
+            document.write("<br/>");
+
+            pick.sort(); //sort the 5 unique numbers
+            document.write("pick after sorting: ");
+            for (j = 0; j < 5; j++) { //print the numbers to the screen
+                document.write(pick[j]) + ", ");
+                console.log(pick[i] + " ");
+            }
+            document.write("<br/>");
+
+            var luckyball = Math.ceil(Math.random() * 17 + 1);
+            pick.push(luckyball); //push the Lucky Ball
+            document.write("lucky ball: " + luckyball);
+            document.write("<br/>");
+
+            document.write("winning numbers and winning lucky ball: ");
+            for (j = 0; j < 5; j++) { //print the numbers to the screen
+                document.write(pick[j]) + ", ");
+                console.log(pick[i] + " ");
+            }
+            document.write("<br/>");
 
             
             
