@@ -17,19 +17,17 @@
             }
 
             document.write("pick before sorting: ");
-            for (j = 0; j < 5; j++) { //print the numbers to the screen
+            for (j = 0; j < 4; j++) { //print the numbers to the screen
                 document.write(pick[j] + ", ");
-                console.log(pick[i] + " ");
             }
-            document.write("<br/>");
+            document.write(pick[j] + "<br/>");
 
-            pick.sort(); //sort the 5 unique numbers
+            pick = pick.sort(); //sort the 5 unique numbers
             document.write("pick after sorting: ");
-            for (j = 0; j < 5; j++) { //print the numbers to the screen
+            for (j = 0; j < 4; j++) { //print the numbers to the screen
                 document.write(pick[j] + ", ");
-                console.log(pick[i] + " ");
             }
-            document.write("<br/>");
+            document.write(pick[j] + "<br/>");
 
             var luckyball = Math.ceil(Math.random() * 17 + 1);
             pick.push(luckyball); //push the Lucky Ball
@@ -41,7 +39,7 @@
                 document.write(pick[j] + ", ");
                 console.log(pick[i] + " ");
             }
-            document.write("<br/>");
+            document.write(pick[j] + "<br/>");
 
             
             
