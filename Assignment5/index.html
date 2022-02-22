@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <Title>Assignment 5: Lottery Simulator</Title>
+        <link rel='stylesheet' href='css/style.css' type='text/css'/> 
+    </head>
+    <body>
+        <header>
+            <h1>CS20 Lottery</h1>
+        </header>
+        <script>
+            var numbers = new Array(5); //create a new array
+            for (i = 0; i < 5; i++) { //push 5 unique numbers to the array
+                Array.push(Math.random() * 47 + 1); 
+            }
+            Array.sort(); //sort the 5 unique numbers
+            Array.push(Math.random() * 17 + 1) //push the Lucky Ball
+            for (j = 0; j < 5; j++) { //print the numbers to the screen
+                document.write("Picks: " + Array[j]);
+            }
+
+            
+            
+        </script>
+        <footer>Copyright &copy; CS20 Lottery</footer>
+    </body>
+<html>
