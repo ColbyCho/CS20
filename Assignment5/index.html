@@ -12,15 +12,15 @@
         </header>
         <script>
             document.write("Javascript");
-            var numbers = new Array(5); //create a new array
+            var picks = [] //create a new empty array
             for (i = 0; i < 5; i++) { //push 5 unique numbers to the array
-                Array.push(Math.random() * 47 + 1); 
+                picks.push(Math.random() * 47 + 1); 
             }
-            Array.sort(); //sort the 5 unique numbers
-            Array.push(Math.random() * 17 + 1) //push the Lucky Ball
+            picks.sort(); //sort the 5 unique numbers
+            picks.push(Math.random() * 17 + 1) //push the Lucky Ball
             for (j = 0; j < 5; j++) { //print the numbers to the screen
-                document.write("Picks: " + Array[j]);
-                console.log(Array[i]);
+                document.write("Picks: " + picks[j]);
+                console.log(picks[i]);
             }
 
             
