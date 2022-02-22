@@ -22,7 +22,8 @@
             }
             document.write(pick[j] + "<br/>");
 
-            pick = pick.sort((a, b) => a - b); //sort the 5 unique numbers
+            //sort the 5 unique numbers, acknowledgements: https://dmitripavlutin.com/javascript-array-sort-numbers/
+            pick = pick.sort((a, b) => a - b);
             document.write("pick after sorting: ");
             for (j = 0; j < 4; j++) { //print the numbers to the screen
                 document.write(pick[j] + ", ");
@@ -41,7 +42,26 @@
             }
             document.write(pick[j] + "<br/>");
 
-            
+            var match = [12, 15, 24, 35, 48]; //the winning combination
+            var count;
+            for (k = 0; k < pick.length; k++) {
+                for (l = 0; l < match.length; l++) {
+                    if (pick[k] == match[l]) {
+                        count++;
+                    }
+                }
+            }
+            document.write("The winning combination: 12, 15, 24, 35, 48" + "<br/>");
+            document.write("You had " + count + " matches");
+            if (luckyball == 3) {
+                document.write(", and a matching lucky ball!");
+            }
+            document.write("<br/>");
+            if (count && (luckyball != 3)) {
+                document.write("Better luck next time!");
+            } else {
+                document.write("Congratulations!");
+            }
             
         </script>
         <footer>Copyright &copy; CS20 Lottery</footer>
