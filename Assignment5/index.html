@@ -17,8 +17,7 @@
                  //ensure that the numbers are unique, acknowledgements: https://mavtipi.medium.com/how-to-generate-unique-random-numbers-in-a-specified-range-in-javascript-80bf1a545ae7
                 if (pick.indexOf(randomNum) === -1) pick.push(randomNum); 
             }
-            console.log(pick);
-            document.write("console:" + pick + "<br/>");
+            
             document.write("pick before sorting: ");
             for (j = 0; j < 4; j++) { //print the numbers to the screen
                 document.write(pick[j] + ", ");
@@ -34,15 +33,15 @@
             document.write(pick[j] + "<br/>");
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
-            pick.push(luckyball); //push the Lucky Ball
+            // pick.push(luckyball); //push the Lucky Ball
             document.write("lucky ball: " + luckyball);
             document.write("<br/>");
 
             document.write("winning numbers and winning lucky ball: ");
-            for (j = 0; j < 5; j++) { //print the numbers to the screen
+            for (j = 0; j < 4; j++) { //print the numbers to the screen
                 document.write(pick[j] + ", ");
             }
-            document.write(pick[j] + "<br/>");
+            document.write(luckyball + "<br/>");
 
             var match = [12, 15, 24, 35, 48]; //the winning combination
             var count;
@@ -55,12 +54,13 @@
                 }
             }
             document.write("The winning combination: 12, 15, 24, 35, 48" + "<br/>");
+            document.write("The lucky ball: " + 3 + "<br/>");
             document.write("You had " + count + " matches");
             if (luckyball == 3) {
                 document.write(", and a matching lucky ball!");
             }
             document.write("<br/>");
-            if (count && (luckyball != 3)) {
+            if (count == 0 && (luckyball != 3)) {
                 document.write("Better luck next time!");
             } else {
                 document.write("Congratulations!");
