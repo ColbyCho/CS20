@@ -15,8 +15,7 @@
             while (pick.length < 6) { //push 5 numbers to the array
                 var randomNum = Math.floor(Math.random() * 47 + 1);
                  //ensure that the numbers are unique, acknowledgements: https://mavtipi.medium.com/how-to-generate-unique-random-numbers-in-a-specified-range-in-javascript-80bf1a545ae7
-                if (pick.indexOf(randomNum) === -1) 
-                    pick.push(randomNum); 
+                if (pick.indexOf(randomNum) === -1) pick.push(randomNum); 
             }
 
             document.write("pick before sorting: ");
