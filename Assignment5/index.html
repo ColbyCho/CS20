@@ -17,7 +17,8 @@
                  //ensure that the numbers are unique, acknowledgements: https://mavtipi.medium.com/how-to-generate-unique-random-numbers-in-a-specified-range-in-javascript-80bf1a545ae7
                 if (pick.indexOf(randomNum) === -1) pick.push(randomNum); 
             }
-
+            console.log(pick);
+            document.write("console:" + pick + "<br/>");
             document.write("pick before sorting: ");
             for (j = 0; j < 4; j++) { //print the numbers to the screen
                 document.write(pick[j] + ", ");
