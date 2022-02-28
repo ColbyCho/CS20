@@ -6,8 +6,38 @@ html {
 }
 
 #unsorted-pick {
-    padding: 40px;
+    padding: 20px;
     color: rebeccapurple;
+    border: solid black;
+}
+
+#sorted-pick {
+    padding: 20px;
+    color: green;
+    border: solid black;
+}
+
+#your-luckyball {
+    padding: 20px;
+    color: red;
+    border: solid black;
+}
+
+#winning-nums {
+    padding: 20px;
+    color: pink;
+    border: solid black;
+}
+
+#matches {
+    padding: 20px;
+    color: firebrick;
+    border: solid black;
+}
+
+#payout-cases {
+    padding: 20px;
+    color: salmon;
     border: solid black;
 }
 
