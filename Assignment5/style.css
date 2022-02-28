@@ -7,19 +7,18 @@ html {
 
 #unsorted-pick {
     padding: 20px;
-    color: rebeccapurple;
+    color: black;
     border: solid rebeccapurple;
 }
 
 #sorted-pick {
     padding: 20px;
-    color: green;
+    color: black;
     border: solid green;
 }
 
 #your-luckyball {
     padding: 20px;
-    color: red;
     border: solid black;
 }
 

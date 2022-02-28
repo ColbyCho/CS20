@@ -11,9 +11,13 @@
             <h1>CS20 Lottery</h1>
         </header>
         <div id="unsorted-pick">Your unsorted pick: </div>
-        <div id="sorted-pick"></div>
-        <div id="your-luckyball"></div>
-        <div id="winning-nums"></div>
+        <div id="sorted-pick">Your sorted pick: </div>
+        <div id="your-luckyball">Your Lucky Ball: </div>
+        <div id="winning-nums"> 
+            The winning numbers: 12, 15, 24, 35, 48
+            <br/>
+            The winning Lucky Ball: 3
+        </div>
         <div id="matches"></div>
         <div id="payout-cases"></div>
         <script>
@@ -27,24 +31,28 @@
             var unsorted = document.getElementById("unsorted-pick");
             // unsorted.innterHTML = "Your unsorted pick: ";
             for (j = 0; j < 4; j++) { //print the numbers to the screen
-                unsorted.innerHTML += pick[j] + ", ";
+                unsorted.innerHTML += pick[j];
             }
             unsorted.innerHTML += pick[j];
-
+            unsorted.style.border = "solid black";
+            unsorted.style.borderRadius = "50%"
             //sort the 5 unique numbers, acknowledgements: https://dmitripavlutin.com/javascript-array-sort-numbers/
             pick = pick.sort((a, b) => a - b);
 
             var sorted = document.getElementById("sorted-pick");
-            sorted.innerHTML += "Your sorted pick: ";
+            // sorted.innerHTML += "Your sorted pick: ";
             for (j = 0; j < 4; j++) { //print the numbers to the screen
-                sorted.innerHTML += pick[j] + ", ";
+                sorted.innerHTML += pick[j];
             }
             sorted.innerHTML += pick[j];
+            sorted.style.border = "solid black";
+            sorted.style.borderRadius = "50%"
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
             var lb = document.getElementById("your-luckyball");
-            lb.innerHTML += "Your lucky ball: " + luckyball;
-            // lb.innerHTML += "<br/>";
+            lb.innerHTML += luckyball;
+            lb.style.backgroundColor = "green";
+            unsorted.style.borderRadius = "50%"
 
             var match = [12, 15, 24, 35, 48]; //the winning combination
             var count = 0;
@@ -55,9 +63,9 @@
                     }
                 }
             }
-            var winning = document.getElementById("winning-nums");
-            winning.innerHTML += "The winning numbers: 12, 15, 24, 35, 48" + "<br/>";
-            winning.innerHTML += "The winning lucky ball: " + 3 + "<br/>";
+            //var winning = document.getElementById("winning-nums");
+            //winning.innerHTML += "The winning numbers: 12, 15, 24, 35, 48" + "<br/>";
+            //winning.innerHTML += "The winning lucky ball: " + 3 + "<br/>";
            
             var matches = document.getElementById("matches");
             matches.innerHTML += "You had " + count + " matches";
