@@ -7,6 +7,13 @@ html {
     padding: 20px;
 }
 
+header {
+    color: white;
+    padding: 20px;
+    background-color: #173e67;
+    width: 100vw;
+}
+
 .pick-container {
     display: flex;
     flex-direction: column;
