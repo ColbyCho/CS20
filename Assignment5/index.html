@@ -34,11 +34,11 @@
             //     unsorted.innerHTML += pick[j];
             // }
 
-            unsorted.innerHTML = pick;
+            // unsorted.innerHTML += pick;
+            
             // unsorted.innerHTML += pick[j];
             for (j = 0; j < 4; j++) { //print the numbers to the screen
-                pick[j].style.border = "solid #000000";
-                pick[j].style.borderRadius = "50%"
+                unsorted.innerHTML += "<span style=border: solid black; border-radius: 50%"> + pick[j] + "</span>";
             }
             // pick.style.border = "solid #000";
             // pick.style.borderRadius = "50%"
