@@ -38,7 +38,8 @@
             
             // unsorted.innerHTML += pick[j];
             for (j = 0; j < 4; j++) { //print the numbers to the screen
-                unsorted.innerHTML += "<span style=border: solid black; border-radius: 50%"> + pick[j] + "</span>";
+                pick[j] = "<span style=border: solid black; border-radius: 50%"> + pick[j] + "</span>";
+                unsorted.innerHTML += pick[j];
             }
             // pick.style.border = "solid #000";
             // pick.style.borderRadius = "50%"
@@ -50,9 +51,9 @@
             // for (j = 0; j < 4; j++) { //print the numbers to the screen
             //     sorted.innerHTML += pick[j];
             // }
-            sorted.innerHTML = pick;
-            pick.style.border = "solid #000000";
-            pick.style.borderRadius = "50%"
+            // sorted.innerHTML = pick;
+            // pick.style.border = "solid #000000";
+            // pick.style.borderRadius = "50%"
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
             var lb = document.getElementById("your-luckyball");
