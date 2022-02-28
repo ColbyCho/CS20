@@ -34,8 +34,8 @@
                 unsorted.innerHTML += pick[j];
             }
             unsorted.innerHTML += pick[j];
-            unsorted.style.border = "solid black";
-            unsorted.style.borderRadius = "50%"
+            unsorted.innerHTML.style.border = "solid black";
+            unsorted.innerHTML.style.borderRadius = "50%"
             //sort the 5 unique numbers, acknowledgements: https://dmitripavlutin.com/javascript-array-sort-numbers/
             pick = pick.sort((a, b) => a - b);
 
@@ -45,14 +45,14 @@
                 sorted.innerHTML += pick[j];
             }
             sorted.innerHTML += pick[j];
-            sorted.style.border = "solid black";
-            sorted.style.borderRadius = "50%"
+            sorted.innerHTML.style.border = "solid black";
+            sorted.innerHTML.style.borderRadius = "50%"
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
             var lb = document.getElementById("your-luckyball");
             lb.innerHTML += luckyball;
-            lb.style.backgroundColor = "green";
-            unsorted.style.borderRadius = "50%"
+            lb.innerHTML.style.backgroundColor = "green";
+            lb.innerHTML.style.borderRadius = "50%"
 
             var match = [12, 15, 24, 35, 48]; //the winning combination
             var count = 0;
