@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -10,7 +11,9 @@
         <header>
             <h1>CS20 Lottery</h1>
         </header>
-        <div id="unsorted-pick">Your unsorted pick: </div>
+        <div id="unsorted-pick">Your unsorted pick: 
+            <br/>
+        </div>
         <div id="sorted-pick">Your sorted pick: </div>
         <div id="your-luckyball">Your Lucky Ball: </div>
         <div id="winning-nums"> 
@@ -30,7 +33,7 @@
 
             var unsorted = document.getElementById("unsorted-pick");
             for (j = 0; j < 5; j++) { //print the numbers to the screen
-                unsorted.innerHTML += "<div style='border: solid black; border-radius: 50%;'>" + pick[j] + "</div>";
+                unsorted.innerHTML += "<div style='border: solid black; border-radius: 50%; padding: 10px;'>" + pick[j] + "</div>";
             }
 
             //sort the 5 unique numbers, acknowledgements: https://dmitripavlutin.com/javascript-array-sort-numbers/
@@ -47,7 +50,7 @@
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
             var lb = document.getElementById("your-luckyball");
-            lb.innerHTML += "<div style='color: white; background-color: green; border-radius: 50%;'>" + luckyball + "</div>";
+            lb.innerHTML += "<div style='color: white; background-color: green; border-radius: 50%; padding: 10px;'>" + luckyball + "</div>";
 
             var match = [12, 15, 24, 35, 48]; //the winning combination
             var count = 0;
