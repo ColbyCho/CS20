@@ -12,7 +12,6 @@
             <h1>CS20 Lottery</h1>
         </header>
         <div id="unsorted-pick">Your unsorted pick: 
-            <br/>
         </div>
         <div id="sorted-pick">Your sorted pick: </div>
         <div id="your-luckyball">Your Lucky Ball: </div>
@@ -32,7 +31,7 @@
             }
 
             var unsorted = document.getElementById("unsorted-pick");
-            for (j = 0; j < 5; j++) { //print the numbers to the screen
+            for (j = 0; j < 5; j++) { //print the unsorted numbers to the screen
                 unsorted.innerHTML += "<div style='border: solid black; border-radius: 50%; padding: 10px;'>" + pick[j] + "</div>";
             }
 
@@ -40,13 +39,9 @@
             pick = pick.sort((a, b) => a - b);
 
             var sorted = document.getElementById("sorted-pick");
-            // sorted.innerHTML += "Your sorted pick: ";
-            // for (j = 0; j < 4; j++) { //print the numbers to the screen
-            //     sorted.innerHTML += pick[j];
-            // }
-            // sorted.innerHTML = pick;
-            // pick.style.border = "solid #000000";
-            // pick.style.borderRadius = "50%"
+            for (j = 0; j < 5; j++) { //print the sorted numbers to the screen
+                sorted.innerHTML += "<div style='border: solid black; border-radius: 50%; padding: 10px;'>" + pick[j] + "</div>";
+            }
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
             var lb = document.getElementById("your-luckyball");
