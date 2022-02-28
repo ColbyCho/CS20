@@ -89,7 +89,19 @@ html {
     gap: 16px;
 } */
 
-.your-luckyball div {
+#your-luckyball div {
+    text-align: center; 
+    font-size: 16px; 
+    font-weight: 600; 
+    width: 24px; 
+    height: 24px; 
+    color: white; 
+    background-color: green; 
+    border-radius: 50%; 
+    padding: 10px;
+}
+
+#winning-pick #winning-luckyball div {
     text-align: center; 
     font-size: 16px; 
     font-weight: 600; 

@@ -19,7 +19,7 @@
             <span>Your sorted pick:</span>
             <div id="sorted-pick"></div>
         </div>
-        <div class="your-luckyball">
+        <div id="your-luckyball">
             <span>Your Lucky Ball:</span>
         </div>
         <div class="pick-container"> 
@@ -31,12 +31,9 @@
                     <div>24</div>
                     <div>35</div>
                     <div>48</div>
-                </div>
-                <div class="your-luckyball">
-                    <div>3</div>
+                    <div id="winning-luckyball">3</div>
                 </div>
             </div>
-            
         </div>
         <div id="matches"></div>
         <div id="payout-cases"></div>
@@ -62,7 +59,7 @@
             }
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
-            var lb = document.getElementsByClassName("your-luckyball");
+            var lb = document.getElementById("your-luckyball");
             lb.innerHTML += "<div>" + luckyball + "</div>";
 
             var match = [12, 15, 24, 35, 48]; //the winning combination
