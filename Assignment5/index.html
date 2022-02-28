@@ -49,7 +49,7 @@
                 if (pick.indexOf(randomNum) === -1) pick.push(randomNum); 
             }
 
-            var unsorted = document.getElementsById("unsorted-pick");
+            var unsorted = document.getElementById("unsorted-pick");
             for (j = 0; j < 5; j++) { //print the unsorted numbers to the screen
                 unsorted.innerHTML += "<div>" + pick[j] + "</div>";
             }
@@ -57,7 +57,7 @@
             //sort the 5 unique numbers, acknowledgements: https://dmitripavlutin.com/javascript-array-sort-numbers/
             pick = pick.sort((a, b) => a - b);
 
-            var sorted = document.getElementsById("sorted-pick");
+            var sorted = document.getElementById("sorted-pick");
             for (j = 0; j < 5; j++) { //print the sorted numbers to the screen
                 sorted.innerHTML += "<div>" + pick[j] + "</div>";
             }
