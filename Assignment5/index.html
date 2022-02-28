@@ -39,7 +39,7 @@
 
             var unsorted = document.getElementById("unsorted-pick");
             for (j = 0; j < 5; j++) { //print the unsorted numbers to the screen
-                unsorted.innerHTML += "<div style='width: 32px; height: 32px; border: solid black; border-radius: 50%; padding: 10px;'>" + pick[j] + "</div>";
+                unsorted.innerHTML += "<div style='text-align: center; width: 32px; height: 32px; border: solid black; border-radius: 50%; padding: 10px;'>" + pick[j] + "</div>";
             }
 
             //sort the 5 unique numbers, acknowledgements: https://dmitripavlutin.com/javascript-array-sort-numbers/
@@ -47,12 +47,12 @@
 
             var sorted = document.getElementById("sorted-pick");
             for (j = 0; j < 5; j++) { //print the sorted numbers to the screen
-                sorted.innerHTML += "<div style='width: 32px; height: 32px; border: solid black; border-radius: 50%; padding: 10px;'>" + pick[j] + "</div>";
+                sorted.innerHTML += "<div style='text-align: center; width: 32px; height: 32px; border: solid black; border-radius: 50%; padding: 10px;'>" + pick[j] + "</div>";
             }
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
             var lb = document.getElementById("your-luckyball");
-            lb.innerHTML += "<div style='width: 32px; height: 32px; color: white; background-color: green; border-radius: 50%; padding: 10px;'>" + luckyball + "</div>";
+            lb.innerHTML += "<div style='text-align: center; width: 32px; height: 32px; color: white; background-color: green; border-radius: 50%; padding: 10px;'>" + luckyball + "</div>";
 
             var match = [12, 15, 24, 35, 48]; //the winning combination
             var count = 0;
