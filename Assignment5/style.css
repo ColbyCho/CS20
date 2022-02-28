@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Fugaz+One&family=Monoton&family=Orbitron:wght@900&family=Oswald:wght@500&family=Roboto+Slab&family=Source+Code+Pro:wght@400;700&family=Ultra&display=swap');
 
-html {
+html, body {
     background-color: mintcream;
     font-family: 'Roboto Slab', Helvetica, monospace;
     text-align: center;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 header {
@@ -20,7 +20,7 @@ header {
     align-items: center;
     padding: 20px;
     color: black;
-}
+}                          
 
 #unsorted-pick, #sorted-pick, #winning-pick {
     display: flex;
@@ -42,6 +42,8 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
 }
 
 #unsorted-pick div {
@@ -50,8 +52,7 @@ header {
     font-weight: 600; 
     width: 24px; 
     height: 24px; 
-    border: 1.8px 
-    solid black; 
+    border: 1.8px solid black; 
     border-radius: 50%; 
     padding: 10px;
 }
@@ -62,22 +63,22 @@ header {
     font-weight: 600; 
     width: 24px; 
     height: 24px; 
-    border: 1.8px 
-    solid black; 
+    border: 1.8px solid black; 
     border-radius: 50%; 
     padding: 10px;
 }
 
 #winning-combo div {
     text-align: center; 
+    color: white;
+    background-color: green;
     font-size: 16px; 
     font-weight: 600; 
     width: 24px; 
     height: 24px; 
-    border: 1.8px 
-    solid black; 
     border-radius: 50%; 
     padding: 10px;
+    margin: 16px;
 }
 
 #your-luckyball div {
