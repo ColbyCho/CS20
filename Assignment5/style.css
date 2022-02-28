@@ -22,6 +22,7 @@ html {
     justify-content: center;
     font-size: 16px;
     font-weight: 600;
+    margin: 10px;
 }
 
 #s-pick {
@@ -39,6 +40,7 @@ html {
     justify-content: center;
     font-size: 16px;
     font-weight: 600;
+    margin: 10px;
 }
 
 #your-luckyball {
@@ -49,6 +51,7 @@ html {
     font-weight: 600;
     padding: 20px;
     border: solid black;
+    gap: 10px;
 }
 
 #winning-nums {
