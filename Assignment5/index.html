@@ -24,23 +24,26 @@
                 if (pick.indexOf(randomNum) === -1) pick.push(randomNum); 
             }
             var unsorted = document.getElementById("unsorted-pick");
-            unsorted.innterHTML = "Your unsorted pick: ";
+            unsorted.innterHTML += "Your unsorted pick: ";
             for (j = 0; j < 4; j++) { //print the numbers to the screen
                 unsorted.innerHTML += pick[j] + ", ";
             }
-            unsorted.innerHTML += pick[j] + "<br/>";
+            unsorted.innerHTML += pick[j];
 
             //sort the 5 unique numbers, acknowledgements: https://dmitripavlutin.com/javascript-array-sort-numbers/
             pick = pick.sort((a, b) => a - b);
-            document.write("Your sorted pick: ");
+
+            var sorted = document.getElementById("sorted-pick");
+            sorted.innerHTML += "Your sorted pick: ";
             for (j = 0; j < 4; j++) { //print the numbers to the screen
-                document.write(pick[j] + ", ");
+                sorted.innerHTML += pick[j] + ", ";
             }
-            document.write(pick[j] + "<br/>");
+            sorted.innerHTML += pick[j];
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
-            document.write("Your lucky ball: " + luckyball);
-            document.write("<br/>");
+            var lb = document.getElementById("your-luckyball");
+            lb.innerHTML += "Your lucky ball: " + luckyball;
+            // lb.innerHTML += "<br/>";
 
             var match = [12, 15, 24, 35, 48]; //the winning combination
             var count = 0;
@@ -51,37 +54,39 @@
                     }
                 }
             }
-            document.write("The winning numbers: 12, 15, 24, 35, 48" + "<br/>");
-            document.write("The winning lucky ball: " + 3 + "<br/>");
-            document.write("You had " + count + " matches");
+            var winning = document.getElementById("winning-nums");
+            winning.innerHTML += "The winning numbers: 12, 15, 24, 35, 48" + "<br/>";
+            winning.innerHTML += "The winning lucky ball: " + 3 + "<br/>";
+            winning.innerHTML += "You had " + count + " matches";
             if (luckyball == 3) {
-                document.write(", and a matching lucky ball!");
+                winning.innerHTML += ", and a matching lucky ball!";
             } 
-            document.write("<br/>");
+            // payout.innerHTML +="<br/>");
 
             //the payout cases
+            var payout = document.getElementById("payout-cases");
             if (count == 0 && luckyball == 3) 
-                document.write("Payout: $4");
+                payout.innerHTML += "Payout: $4";
             else if (count == 1 && luckyball == 3) 
-                document.write("Payout: $6");
+                payout.innerHTML += "Payout: $6";
             else if (count == 2 && luckyball != 3) 
-                document.write("Payout: $3");    
+                payout.innerHTML += "Payout: $3";    
             else if (count == 2 && luckyball == 3) 
-                document.write("Payout: $25");  
+                payout.innerHTML += "Payout: $25";  
             else if (count == 3 && luckyball != 3) 
-                document.write("Payout: $20");
+                payout.innerHTML += "Payout: $20";
             else if (count == 3 && luckyball == 3) 
-                document.write("Payout: $150");
+                payout.innerHTML += "Payout: $150";
             else if (count == 4 && luckyball != 3)
-                document.write("Payout: $200");
+                payout.innerHTML += "Payout: $200";
             else if (count == 4 && luckyball == 3)
-                document.write("Payout: $5000");
+                payout.innerHTML += "Payout: $5000";
             else if (count == 5 && luckyball != 3) 
-                document.write("Payout: $25,000 a YEAR for LIFE");
+                payout.innerHTML += "Payout: $25,000 a YEAR for LIFE";
             else if (count == 5 && luckyball == 3) 
-                document.write("Payout: $7,000 a WEEK for LIFE");
+                payout.innerHTML += "Payout: $7,000 a WEEK for LIFE";
             else 
-                document.write("Payout: $0. Better luck next time!");
+                payout.innerHTML += "Payout: $0. Better luck next time!";
             
         </script>
         <footer>Copyright &copy; CS20 Lottery</footer>
