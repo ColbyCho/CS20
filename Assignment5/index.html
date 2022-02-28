@@ -13,11 +13,11 @@
         </header>
         <div class="pick-container">
             <span>Your unsorted pick:</span>
-            <div class="pick"></div>
+            <div id="unsorted-pick"></div>
         </div>
         <div class="pick-container">
             <span>Your sorted pick:</span>
-            <div class="pick"></div>
+            <div id="sorted-pick"></div>
         </div>
         <div class="your-luckyball">
             <span>Your Lucky Ball:</span>
@@ -49,21 +49,21 @@
                 if (pick.indexOf(randomNum) === -1) pick.push(randomNum); 
             }
 
-            var unsorted = document.getElementById("unsorted-pick");
+            var sorted = document.getElementsById("sorted-pick");
             for (j = 0; j < 5; j++) { //print the unsorted numbers to the screen
-                unsorted.innerHTML += "<div>" + pick[j] + "</div>";
+                sorted.innerHTML += "<div>" + pick[j] + "</div>";
             }
 
             //sort the 5 unique numbers, acknowledgements: https://dmitripavlutin.com/javascript-array-sort-numbers/
             pick = pick.sort((a, b) => a - b);
 
-            var sorted = document.getElementById("sorted-pick");
+            var unsorted = document.getElementsById("unsorted-pick");
             for (j = 0; j < 5; j++) { //print the sorted numbers to the screen
-                sorted.innerHTML += "<div>" + pick[j] + "</div>";
+                unsorted.innerHTML += "<div>" + pick[j] + "</div>";
             }
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
-            var lb = document.getElementById("your-luckyball");
+            var lb = document.getElementsByClassName("your-luckyball");
             lb.innerHTML += "<div>" + luckyball + "</div>";
 
             var match = [12, 15, 24, 35, 48]; //the winning combination
