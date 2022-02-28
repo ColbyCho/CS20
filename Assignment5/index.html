@@ -33,7 +33,6 @@
             document.write(pick[j] + "<br/>");
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
-            // pick.push(luckyball); //push the Lucky Ball
             document.write("lucky ball: " + luckyball);
             document.write("<br/>");
 
@@ -45,11 +44,10 @@
 
             var match = [12, 15, 24, 35, 48]; //the winning combination
             var count = 0;
-            for (k = 0; k < pick.length; k++) {
+            for (k = 0; k < pick.length; k++) { //count the number of matches
                 for (l = 0; l < match.length; l++) {
                     if (pick[k] == match[l]) {
                         count++;
-                        console.log(count);
                     }
                 }
             }
@@ -57,13 +55,46 @@
             document.write("The lucky ball: " + 3 + "<br/>");
             document.write("You had " + count + " matches");
             if (luckyball == 3) {
-                document.write(", and a matching lucky ball!");
+                document.write(", and a matching lucky ball!<br/>");
+            } 
+
+            switch (count) { //the payout cases
+                case (0 && luckyball == 3): 
+                    document.write("Payout: $4");
+                    break;
+                case (1 && luckyball == 3): 
+                    document.write("Payout: $6");
+                    break;
+                case (2 && luckyball != 3): 
+                    document.write("Payout: $3");
+                    break;
+                case (2 && luckyball == 3): 
+                    document.write("Payout: $25");
+                    break;
+                case (3 && luckyball != 3): 
+                    document.write("Payout: $20");
+                    break;
+                case (3 && luckyball == 3): 
+                    document.write("Payout: $150");
+                    break;
+                case (4 && luckyball != 3): 
+                    document.write("Payout: $200");
+                    break;
+                case (4 && luckyball == 3): 
+                    document.write("Payout: $5000");
+                    break;
+                case (5 && luckyball != 3): 
+                    document.write("Payout: $25,000 a YEAR for LIFE");
+                    break;
+                case (5 && luckyball == 3): 
+                    document.write("Payout: $7,000 a WEEK for LIFE");
+                    break;
+                default: 
+                    document.write("Payout: $0. Better luck next time!");
             }
             document.write("<br/>");
-            if (count == 0 && (luckyball != 3)) {
+            if (count <= 1 && (luckyball != 3)) {
                 document.write("Better luck next time!");
-            } else {
-                document.write("Congratulations!");
             }
             
         </script>
