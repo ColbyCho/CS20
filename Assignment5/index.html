@@ -10,7 +10,7 @@
         <header>
             <h1>CS20 Lottery</h1>
         </header>
-        <div id="unsorted-pick"></div>
+        <div id="unsorted-pick">Your unsorted pick: </div>
         <div id="sorted-pick"></div>
         <div id="your-luckyball"></div>
         <div id="winning-nums"></div>
@@ -25,7 +25,7 @@
             }
 
             var unsorted = document.getElementById("unsorted-pick");
-            unsorted.innterHTML = "Your unsorted pick: ";
+            // unsorted.innterHTML = "Your unsorted pick: ";
             for (j = 0; j < 4; j++) { //print the numbers to the screen
                 unsorted.innerHTML += pick[j] + ", ";
             }
