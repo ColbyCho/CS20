@@ -15,7 +15,7 @@ html {
     color: black;
 }
 
-#unsorted-pick, #sorted-pick {
+#unsorted-pick, #sorted-pick, #winning-pick {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -36,6 +36,18 @@ html {
 }
 
 #sorted-pick div {
+    text-align: center; 
+    font-size: 16px; 
+    font-weight: 600; 
+    width: 24px; 
+    height: 24px; 
+    border: 1.8px 
+    solid black; 
+    border-radius: 50%; 
+    padding: 10px;
+}
+
+#winning-pick div {
     text-align: center; 
     font-size: 16px; 
     font-weight: 600; 
@@ -78,4 +90,9 @@ html {
 script {
     font-size: 24px;
     padding: 20px;
+}
+
+footer {
+    padding: 20px;
+    margin-top: 10px;
 }
