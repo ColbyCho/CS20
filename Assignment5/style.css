@@ -90,7 +90,9 @@ html {
 } */
 
 #your-luckyball div {
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
     text-align: center; 
     font-size: 16px; 
     font-weight: 600; 
