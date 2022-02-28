@@ -18,7 +18,7 @@
                 if (pick.indexOf(randomNum) === -1) pick.push(randomNum); 
             }
             
-            document.write("pick before sorting: ");
+            document.write("Your unsorted pick: ");
             for (j = 0; j < 4; j++) { //print the numbers to the screen
                 document.write(pick[j] + ", ");
             }
@@ -26,21 +26,21 @@
 
             //sort the 5 unique numbers, acknowledgements: https://dmitripavlutin.com/javascript-array-sort-numbers/
             pick = pick.sort((a, b) => a - b);
-            document.write("pick after sorting: ");
+            document.write("Your sorted pick: ");
             for (j = 0; j < 4; j++) { //print the numbers to the screen
                 document.write(pick[j] + ", ");
             }
             document.write(pick[j] + "<br/>");
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
-            document.write("lucky ball: " + luckyball);
+            document.write("Your lucky ball: " + luckyball);
             document.write("<br/>");
 
-            document.write("winning numbers and winning lucky ball: ");
-            for (j = 0; j < 4; j++) { //print the numbers to the screen
-                document.write(pick[j] + ", ");
-            }
-            document.write(luckyball + "<br/>");
+            // document.write("winning numbers and winning lucky ball: ");
+            // for (j = 0; j < 4; j++) { //print the numbers to the screen
+            //     document.write(pick[j] + ", ");
+            // }
+            // document.write(luckyball + "<br/>");
 
             var match = [12, 15, 24, 35, 48]; //the winning combination
             var count = 0;
@@ -51,51 +51,37 @@
                     }
                 }
             }
-            document.write("The winning combination: 12, 15, 24, 35, 48" + "<br/>");
-            document.write("The lucky ball: " + 3 + "<br/>");
+            document.write("The winning numbers: 12, 15, 24, 35, 48" + "<br/>");
+            document.write("The winning lucky ball: " + 3 + "<br/>");
             document.write("You had " + count + " matches");
             if (luckyball == 3) {
                 document.write(", and a matching lucky ball!<br/>");
             } 
             document.write("<br/>");
-            switch (count && luckyball) { //the payout cases
-                case (0 && 3): 
-                    document.write("Payout: $4");
-                    break;
-                case (1 && 3): 
-                    document.write("Payout: $6");
-                    break;
-                case (2 && !3): 
-                    document.write("Payout: $3");
-                    break;
-                case (2 && 3): 
-                    document.write("Payout: $25");
-                    break;
-                case (3 && !3): 
-                    document.write("Payout: $20");
-                    break;
-                case (3 && 3): 
-                    document.write("Payout: $150");
-                    break;
-                case (4 && !3): 
-                    document.write("Payout: $200");
-                    break;
-                case (4 && 3): 
-                    document.write("Payout: $5000");
-                    break;
-                case (5 && !3): 
-                    document.write("Payout: $25,000 a YEAR for LIFE");
-                    break;
-                case (5 && 3): 
-                    document.write("Payout: $7,000 a WEEK for LIFE");
-                    break;
-                default: 
-                    document.write("Payout: $0. Better luck next time!");
-            }
-            document.write("<br/>");
-            if (count <= 1 && (luckyball != 3)) {
-                document.write("Better luck next time!");
-            }
+
+            //the payout cases
+            if (count == 0 && luckyball == 3) 
+                document.write("Payout: $4");
+            else if (count == 1 && luckyball == 3) 
+                document.write("Payout: $6");
+            else if (count == 2 && luckyball != 3) 
+                document.write("Payout: $3");    
+            else if (count == 2 && luckyball == 3) 
+                document.write("Payout: $25");  
+            else if (count == 3 && luckyball != 3) 
+                document.write("Payout: $20");
+            else if (count == 3 && luckyball == 3) 
+                document.write("Payout: $150");
+            else if (count == 4 && luckyball != 3)
+                document.write("Payout: $200");
+            else if (count == 4 && luckyball == 3)
+                document.write("Payout: $5000");
+            else if (count == 5 && luckyball != 3) 
+                document.write("Payout: $25,000 a YEAR for LIFE");
+            else if (count == 5 && luckyball == 3) 
+                document.write("Payout: $7,000 a WEEK for LIFE");
+            else 
+                document.write("Payout: $0. Better luck next time!");
             
         </script>
         <footer>Copyright &copy; CS20 Lottery</footer>
