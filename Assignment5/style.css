@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Fugaz+One&family=Monoton&family=Orbitron:wght@900&family=Oswald:wght@500&family=Roboto+Slab&family=Source+Code+Pro:wght@400;700&family=Ultra&display=swap');
+
 html {
     background-color: mintcream;
-    font-family: Helvetica, monospace;
+    font-family: 'Roboto Slab', Helvetica, monospace;
     text-align: center;
     padding: 20px;
 }
