@@ -23,8 +23,9 @@
                  //ensure that the numbers are unique, acknowledgements: https://mavtipi.medium.com/how-to-generate-unique-random-numbers-in-a-specified-range-in-javascript-80bf1a545ae7
                 if (pick.indexOf(randomNum) === -1) pick.push(randomNum); 
             }
+
             var unsorted = document.getElementById("unsorted-pick");
-            unsorted.innterHTML += "Your unsorted pick: ";
+            unsorted.innterHTML = "Your unsorted pick: ";
             for (j = 0; j < 4; j++) { //print the numbers to the screen
                 unsorted.innerHTML += pick[j] + ", ";
             }
@@ -57,9 +58,11 @@
             var winning = document.getElementById("winning-nums");
             winning.innerHTML += "The winning numbers: 12, 15, 24, 35, 48" + "<br/>";
             winning.innerHTML += "The winning lucky ball: " + 3 + "<br/>";
-            winning.innerHTML += "You had " + count + " matches";
+           
+            var matches = document.getElementById("matches");
+            matches.innerHTML += "You had " + count + " matches";
             if (luckyball == 3) {
-                winning.innerHTML += ", and a matching lucky ball!";
+                matches.innerHTML += " and a matching lucky ball!";
             } 
             // payout.innerHTML +="<br/>");
 
