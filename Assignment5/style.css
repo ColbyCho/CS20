@@ -5,6 +5,11 @@ html {
     padding: 20px;
 }
 
+#unsorted-pick {
+    color: rebeccapurple;
+    border: solid black;
+}
+
 script {
     font-size: 24px;
     padding: 20px;
