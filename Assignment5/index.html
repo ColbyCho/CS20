@@ -36,8 +36,12 @@
 
             unsorted.innerHTML = pick;
             // unsorted.innerHTML += pick[j];
-            pick.style.border = "solid #000";
-            pick.style.borderRadius = "50%"
+            for (j = 0; j < 4; j++) { //print the numbers to the screen
+                pick[j].style.border = "solid #000";
+                pick[j].style.borderRadius = "50%"
+            }
+            // pick.style.border = "solid #000";
+            // pick.style.borderRadius = "50%"
             //sort the 5 unique numbers, acknowledgements: https://dmitripavlutin.com/javascript-array-sort-numbers/
             pick = pick.sort((a, b) => a - b);
 
