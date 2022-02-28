@@ -6,6 +6,7 @@ html {
 }
 
 #unsorted-pick {
+    padding: 40px;
     color: rebeccapurple;
     border: solid black;
 }

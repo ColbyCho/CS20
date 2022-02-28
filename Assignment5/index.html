@@ -26,9 +26,9 @@
             var unsorted = document.getElementById("unsorted-pick");
             unsorted.innterHTML = "Your unsorted pick: ";
             for (j = 0; j < 4; j++) { //print the numbers to the screen
-                unsorted.innerHTML = pick[j] + ", ";
+                unsorted.innerHTML += pick[j] + ", ";
             }
-            unsorted.innerHTML = pick[j] + "<br/>";
+            unsorted.innerHTML += pick[j] + "<br/>";
 
             //sort the 5 unique numbers, acknowledgements: https://dmitripavlutin.com/javascript-array-sort-numbers/
             pick = pick.sort((a, b) => a - b);
