@@ -81,13 +81,13 @@ html {
     padding: 10px;
 }
 
-.your-luckyball {
+/* .your-luckyball {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     gap: 16px;
-}
+} */
 
 .your-luckyball div {
     text-align: center; 
