@@ -57,36 +57,36 @@
             if (luckyball == 3) {
                 document.write(", and a matching lucky ball!<br/>");
             } 
-
-            switch (count) { //the payout cases
-                case (0 && luckyball == 3): 
+            document.write("<br/>");
+            switch (count && luckyball) { //the payout cases
+                case (0 && 3): 
                     document.write("Payout: $4");
                     break;
-                case (1 && luckyball == 3): 
+                case (1 && 3): 
                     document.write("Payout: $6");
                     break;
-                case (2 && luckyball != 3): 
+                case (2 && !3): 
                     document.write("Payout: $3");
                     break;
-                case (2 && luckyball == 3): 
+                case (2 && 3): 
                     document.write("Payout: $25");
                     break;
-                case (3 && luckyball != 3): 
+                case (3 && !3): 
                     document.write("Payout: $20");
                     break;
-                case (3 && luckyball == 3): 
+                case (3 && 3): 
                     document.write("Payout: $150");
                     break;
-                case (4 && luckyball != 3): 
+                case (4 && !3): 
                     document.write("Payout: $200");
                     break;
-                case (4 && luckyball == 3): 
+                case (4 && 3): 
                     document.write("Payout: $5000");
                     break;
-                case (5 && luckyball != 3): 
+                case (5 && !3): 
                     document.write("Payout: $25,000 a YEAR for LIFE");
                     break;
-                case (5 && luckyball == 3): 
+                case (5 && 3): 
                     document.write("Payout: $7,000 a WEEK for LIFE");
                     break;
                 default: 
