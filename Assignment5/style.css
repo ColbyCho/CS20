@@ -23,7 +23,19 @@ html {
     margin: 16px;
 }
 
-#unsorted-pick, #sorted-pick div {
+#unsorted-pick div {
+    text-align: center; 
+    font-size: 16px; 
+    font-weight: 600; 
+    width: 24px; 
+    height: 24px; 
+    border: 1.8px 
+    solid black; 
+    border-radius: 50%; 
+    padding: 10px;
+}
+
+#sorted-pick div {
     text-align: center; 
     font-size: 16px; 
     font-weight: 600; 
