@@ -49,17 +49,17 @@
                 if (pick.indexOf(randomNum) === -1) pick.push(randomNum); 
             }
 
-            var sorted = document.getElementsById("sorted-pick");
+            var unsorted = document.getElementsById("unsorted-pick");
             for (j = 0; j < 5; j++) { //print the unsorted numbers to the screen
-                sorted.innerHTML += "<div>" + pick[j] + "</div>";
+                unsorted.innerHTML += "<div>" + pick[j] + "</div>";
             }
 
             //sort the 5 unique numbers, acknowledgements: https://dmitripavlutin.com/javascript-array-sort-numbers/
             pick = pick.sort((a, b) => a - b);
 
-            var unsorted = document.getElementsById("unsorted-pick");
+            var sorted = document.getElementsById("sorted-pick");
             for (j = 0; j < 5; j++) { //print the sorted numbers to the screen
-                unsorted.innerHTML += "<div>" + pick[j] + "</div>";
+                sorted.innerHTML += "<div>" + pick[j] + "</div>";
             }
 
             var luckyball = Math.floor(Math.random() * 17 + 1);
