@@ -73,8 +73,10 @@
             var matches = document.getElementById("matches");
             matches.innerHTML += "You had " + count + " matches";
             if (luckyball == 3) {
-                matches.innerHTML += " and a matching lucky ball!";
-            } 
+                matches.innerHTML += " and a matching Lucky Ball!";
+            } else {
+                matches.innerHTML += " and no matching Lucky Ball."
+            }
 
             //the payout cases
             var payout = document.getElementById("payout-cases");
