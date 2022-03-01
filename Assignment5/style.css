@@ -4,14 +4,14 @@ html, body {
     background-color: mintcream;
     font-family: 'Roboto Slab', Helvetica, monospace;
     text-align: center;
-    /* padding: 20px; */
+    padding: 10px;
 }
 
 header {
     color: white;
-    padding: 20px;
+    padding: 10px;
     background-color: #173e67;
-    width: 100vw;
+    width: auto;
 }
 
 .pick-container {
