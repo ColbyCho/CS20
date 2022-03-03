@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amicable Numbers Calculator</title>
+    <link rel='stylesheet' href='styles.css' type='text/css'/> 
+  </head>
+  <body>
+    <div id="box">
+      <header>
+        <h1>Amicable Numbers Calculator</h1>
+      </header>
+      <main>
+        <form>
+          <label for="firstnum">First number:</label>
+          <input type="text" id="first-number" name="fnum" placeholder="Your first number"><br>
+          <label for="secondnum">Second number:</label>
+          <input type="text" id="second-number" name="snum" placeholder="Your second number"><br><br>
+          <input type="button" value="Enter" onClick="main()" id="button">
+        </form> 
+        <div id="result"></div>
+        <div id="factors">
+          <div id="firstFactors"></div>
+          <div id="secondFactors"></div>
+        </div>
+      </main>
+      <footer>Copyright &copy 2022; Amicable Numbers Calculator</footer>
+    </div>
+    <script>
+        //main function that computes whether two numbers are amicable
+        function main() {
+            firstNum = document.getElementById("first-number").value; //recieve first user-inputted number
+            firstNumFactors = findFactors(firstNum); //find factors of number
+            printFactors("firstFactors", firstNumFactors); //display the factors
+            firstSum = sumFactors(firstNumFactors); //sum the factors
+
+            //repeat the above process for the second number
+            secondNum = document.getElementById("second-number").value;
+            secondNumFactors = findFactors(secondNum);
+            printFactors("secondFactors", secondNumFactors);
+            secondSum = sumFactors(secondNumFactors);
+
+            result = document.getElementById("result"); //grab result div
+            if (firstSum == secondNum && secondSum == firstNum) { //determine if numbers are amicable
+                result.innerHTML = "The numbers: " + firstNum + " and " + secondNum + " are amicable";
+            } else {
+                result.innerHTML = "The numbers: " + firstNum + " and " + secondNum + " are not amicable";
+            }
+        }
+
+        //printFactors function that displays all elements from an array to
+        function printFactors(id, factorArr) {
+            num = document.getElementById(id);
+            num.innerHTML = factorArr[factorArr.length-1] + "'s factors: " + factorArr + "<br>";
+        }
+
+        //sumFactors function that sums the factors of a number
+        function sumFactors(factorArr) {
+            sum = 0;
+            for (let i = 0; i < factorArr.length-1; i++) {
+                sum += factorArr[i];
+            }
+            console.log(sum);
+            return sum;
+        }
+
+        //findFactors function that pushes the factors of a number to an array
+        function findFactors(number) {
+            var factors = [];
+            for(let x = 1; x <= number; x++) {
+                if (isAFactor(x, number))
+                    factors.push(x);
+            }
+            return factors;
+        }
+
+        //isAFactor function that determines if a number x is a factor of a number y
+        function isAFactor(x,y) {
+            remainder = y % x;
+            if (remainder == 0) 
+                return true;
+            else 
+                return false
+        }
+    </script>
+  </body>
+<html>
