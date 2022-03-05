@@ -10,8 +10,8 @@ html, body {
 #box {
     padding-top: 10px;
     background-color: rgb(22, 0, 32);
-    margin-left: 600px;
-    margin-right: 600px;
+    margin-left: 300px;
+    margin-right: 300px;
     margin-top: 10vh;
     box-shadow: 0px 10px 50px #121212;
 }
