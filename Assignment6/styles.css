@@ -67,6 +67,8 @@ input::placeholder {
 }
 
 #factors {
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 24px;
 }
 

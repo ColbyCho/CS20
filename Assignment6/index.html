@@ -54,10 +54,10 @@
         function printFactors(id, factorArr) {
             num = document.getElementById(id);
             num.innerHTML = factorArr[factorArr.length-1] + "'s factors: "; 
-            for (let i = 0; i < factorArr.length-1; i++) {
+            for (let i = 0; i < factorArr.length-2; i++) {
               num.innerHTML += factorArr[i] + ", ";
             }
-            num.innerHTML += "<br>";
+            num.innerHTML += factorArr[i-1] + "<br>";
         }
 
         //sumFactors function that sums the factors of a number
