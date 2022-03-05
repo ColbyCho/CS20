@@ -8,8 +8,7 @@ html, body {
 }
 
 #box {
-    padding-left: 30vw;
-    padding-right: 30vw;
+    width: 75vw;
     padding-top: 10px;
     background-color: rgb(22, 0, 32);
     margin-top: 10vh;
