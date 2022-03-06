@@ -53,12 +53,11 @@
         //printFactors function that displays all elements from an array to
         function printFactors(id, factorArr) {
             num = document.getElementById(id);
-            num.innerHTML = factorArr[factorArr.length-1] + "'s factors: " + factorArr + "<br>"; 
-            
-            // for (let i = 0; i < factorArr.length-3; i++) {
-            //   num.innerHTML += factorArr[i] + ", ";
-            // }
-            // num.innerHTML += factorArr[factorArr.length-2] + "<br>";
+            num.innerHTML = factorArr[factorArr.length-1] + "'s factors: "; 
+            for (let i = 0; i < factorArr.length-2; i++) {
+              num.innerHTML += factorArr[i] + ", ";
+            }
+            num.innerHTML += factorArr[factorArr.length-1] + "<br>";
         }
 
         //sumFactors function that sums the factors of a number
@@ -67,7 +66,6 @@
             for (let i = 0; i < factorArr.length-1; i++) {
                 sum += factorArr[i];
             }
-            console.log(sum);
             return sum;
         }
 
