@@ -53,7 +53,11 @@
         //printFactors function that displays all elements from an array to
         function printFactors(id, factorArr) {
             num = document.getElementById(id);
-            num.innerHTML = factorArr[factorArr.length-1] + "'s factors: "; 
+            if (factorArr[factorArr.length-1] == 0) {
+              num.innerHTML = "0's factors: ";
+            } else {
+              num.innerHTML = factorArr[factorArr.length-1] + "'s factors: "; 
+            }
             for (let i = 0; i < factorArr.length-2; i++) {
               num.innerHTML += factorArr[i] + ", ";
             }
