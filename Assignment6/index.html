@@ -74,10 +74,9 @@
             var factors = [];
             for(let x = 1; x <= number; x++) {
                 if (isAFactor(x, number)) {
-                  console.log(x);
+                  // console.log(x); commented out for testing purposes
                   factors.push(x);
                 }
-                    
             }
             return factors;
         }
@@ -86,15 +85,12 @@
         function isAFactor(x,y) {
             remainder = y % x;
             if (remainder == 0) {
-              console.log(x);
+              // console.log(x); commented out for testing purposes
               return true;
-            }
-                
-            else {
-              console.log(x + " " + remainder);
+            } else {
+              // console.log(x + " " + remainder); commented out for testing purposes
               return false
-            }
-                
+            }   
         }
     </script>
   </body>
