@@ -33,13 +33,13 @@
         function main() {
             firstNum = document.getElementById("first-number").value; //recieve first user-inputted number
             firstNumFactors = findFactors(firstNum); //find factors of number
-            printFactors("firstFactors", firstNumFactors); //display the factors
+            windown.alert(printFactors("firstFactors", firstNumFactors)); //display the factors
             firstSum = sumFactors(firstNumFactors); //sum the factors
 
             //repeat the above process for the second number
             secondNum = document.getElementById("second-number").value;
             secondNumFactors = findFactors(secondNum);
-            printFactors("secondFactors", secondNumFactors);
+            window.alert(printFactors("secondFactors", secondNumFactors));
             secondSum = sumFactors(secondNumFactors);
 
             result = document.getElementById("result"); //grab result div
