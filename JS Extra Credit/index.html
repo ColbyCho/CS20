@@ -21,10 +21,10 @@
           <input type="button" value="Enter" onClick="main()" id="button">
         </form> 
         <div id="result"></div>
-        <div id="factors">
+        <!-- <div id="factors">
           <div id="firstFactors"></div>
           <div id="secondFactors"></div>
-        </div>
+        </div> -->
       </main>
       <footer>Copyright &copy 2022; Amicable Numbers Calculator</footer>
     </div>
@@ -33,13 +33,13 @@
         function main() {
             firstNum = document.getElementById("first-number").value; //recieve first user-inputted number
             firstNumFactors = findFactors(firstNum); //find factors of number
-            windown.alert(printFactors("firstFactors", firstNumFactors)); //display the factors
+            windown.alert(printFactors(firstNumFactors)); //display the factors
             firstSum = sumFactors(firstNumFactors); //sum the factors
 
             //repeat the above process for the second number
             secondNum = document.getElementById("second-number").value;
             secondNumFactors = findFactors(secondNum);
-            window.alert(printFactors("secondFactors", secondNumFactors));
+            window.alert(printFactors(secondNumFactors));
             secondSum = sumFactors(secondNumFactors);
 
             result = document.getElementById("result"); //grab result div
@@ -51,13 +51,13 @@
         }
 
         //printFactors function that displays all elements from an array to
-        function printFactors(id, factorArr) {
-            num = document.getElementById(id);
-            num.innerHTML = factorArr[factorArr.length-1] + "'s factors: "; 
+        function printFactors(factorArr) {
+            string = factorArr[factorArr.length-1] + "'s factors: "; 
             for (let i = 0; i < factorArr.length-2; i++) {
-              num.innerHTML += factorArr[i] + ", ";
+              string += factorArr[i] + ", ";
             }
-            num.innerHTML += factorArr[factorArr.length-2] + "<br>";
+            string += factorArr[factorArr.length-2] + "<br>";
+            return string;
         }
 
         //sumFactors function that sums the factors of a number
