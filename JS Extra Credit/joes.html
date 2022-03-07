@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Joe's Hotdog Stand II</title>
+    <link rel='stylesheet' href='joe-style.css' type='text/css'/> 
+  </head>
+  <body>
+      <header>
+        <h1>Joe's Hotdog Stand 2.0</h1>
+      </header>
+      <div id="flex-container">
+        <div id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li>Hotdogs: $3.75</li>
+                <li>French Fries: $2.00</li>
+                <li>Drinks: $1.80</li>
+            </ul>
+        </div>
+        <div id="form">
+            <form>
+                <label for="hotdogs">Please select the number of hotdogs that you would like to order: </label>
+                <select id="hotdog" name="dogs">
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                </select>
+            </form>
+            <form>
+                <label for="french-fries">Please select the number of french fries that you would like to order: </label>
+                <select id="fries" name="fries">
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                </select>
+            </form>
+            <form>
+                <label for="soda">Please select the number of soft drinks that you would like to order: </label>
+                <select id="soda" name="sodas">
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                </select>
+            </form>
+            <input type="submit">
+        </div>
+        <img src="hotdog.jpg" alt="hot dog">
+      </div>
+      <div id="order-summary">
+        <h2>Your Order Summary</h2>
+        <div id="summary-flex">
+          <div id="order-items">
+            <script>
+            //   var hotdogs = prompt("How many hotdogs would you like?", "");
+            //   var fries = prompt("How many french fries would you like?", "");
+            //   var drinks = prompt("How many drinks would you like?", "");
+    
+              document.write("Number of hotdogs: " + "<br/>");
+              document.write("Number of french fries: " + "<br/>");
+              document.write("Number of drinks: " + "<br/>");
+              
+              var subtotal = (3.75 * hotdogs) + (2 * fries) + (1.8 * drinks);
+              
+              document.write("Subtotal: " + "<br/>");
+    
+              if (subtotal >= 20) {
+                  discount = subtotal - (subtotal * .10);
+                  document.write("Subtotal with discount applied: " + "<br/>");
+
+                  var tax = discount * .0625;
+                  document.write("Tax: " + "<br/>");
+              
+                  var final = discount + tax;
+                  document.write("<br/>" + "Total: " + "<br/>");
+              } else {
+                var tax = subtotal * .0625;
+                document.write("Tax: " + "<br/>");
+              
+                var final = subtotal + tax;
+                document.write("<br/>" + "Total: " + "<br/>");
+              }
+          </script>
+          </div>
+          <div id="order-prices">
+            <script>
+              document.write(hotdogs + "<br/>");
+              document.write(fries + "<br/>");
+              document.write(drinks + "<br/>");
+              document.write(("$" + Math.round(subtotal * 100) / 100) + "<br/>");
+              if (subtotal >= 20) {
+                document.write(("$" + Math.round(discount * 100) / 100) + "<br/>");
+              }
+              document.write(("$" + Math.round(tax * 100) / 100) + "<br/>");
+              document.write(("<br/>" + "$" + Math.round(final * 100) / 100) + "<br/>");
+            </script>
+          </div>
+        </div>
+      </div>
+      <footer>Copyright &copy; Joe's Hotdog Stand</footer>
+  </body>
+<html>

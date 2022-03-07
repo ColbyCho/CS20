@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Slide Show</title>
+    <style>
+        html, body {
+            color: white;
+            text-align: center;
+            background-color: rgb(34, 18, 9);
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        #slides img {
+            height: 320px;
+            padding: 20px;
+        }
+
+        input {
+            cursor: pointer;
+            font-family: Helvetica, Arial, sans-serif;
+            width: 160px;
+            background-color: white;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        footer {
+            margin-top: 40px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        images = ["minispeaker.jpg", "braun.jpg", "polestar.jpg", "topspinner.jpg", "applemouse.jpg"];
+        var index = 0;
+
+        $(document).ready(function() {
+            $("#start").click(cycle); //start slideshow
+            $("#stop").click(function() { //stop slideshow
+                $("#slides img").stop().fadeIn();
+            });
+        })
+
+        function cycle() { //cycle through slide show function
+            $("#slides img").fadeOut(2000, nextSlide); //move to next slide via nextSlide function
+        }
+
+        function nextSlide() {
+            index++;
+            index= index== images.length?0: index; //acknowledgements: jQuery lecture example
+            $("#slides img").attr("src", "images/" + images[index]); 
+            $("#slides img").fadeIn(2000, cycle); //callback to cycle function
+        }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>jQuery Slide Show</h1>
+    </header>
+    <div id="slides-container">
+        <div id="slides">
+            <img src="images/minispeaker.jpg" alt="mini speaker" style="opacity: 1;">
+        </div>
+    </div>
+    <input type="button" id="start" value="Start">
+    <input type="button" id="stop" value="Stop">
+    <footer>Copyright &copy; jQuery Slide Show 2022</footer>
+  </body>
+</html>
