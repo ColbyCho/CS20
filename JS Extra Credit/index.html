@@ -47,10 +47,10 @@
             } else {
                 result.innerHTML = "The numbers: " + firstNum + " and " + secondNum + " are not amicable";
             }
+            factors1 = printFactors(firstNumFactors)
+            factors2 = printFactors(secondNumFactors);
+            window.alert(factors1 + " \n" + factors2); //pop up for the factors
         }
-        factors1 = printFactors(firstNumFactors)
-        factors2 = printFactors(secondNumFactors);
-        window.alert(factors1 + " \n" + factors2); //pop up for the factors
 
         //printFactors function that displays all elements from an array to
         function printFactors(factorArr) {
