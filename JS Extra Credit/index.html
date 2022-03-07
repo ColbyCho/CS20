@@ -35,7 +35,7 @@
             firstNum = document.getElementById("first-number").value; //recieve first user-inputted number
             firstNumFactors = findFactors(firstNum); //find factors of number
             factors = printFactors(firstNumFactors)
-            windown.alert(factors); //display the factors
+            window.alert(factors); //display the factors
             firstSum = sumFactors(firstNumFactors); //sum the factors
 
             //repeat the above process for the second number
@@ -76,11 +76,8 @@
         function findFactors(number) {
             var factors = [];
             for(let x = 1; x <= number; x++) {
-                if (isAFactor(x, number)) {
-                  console.log(x);
+                if (isAFactor(x, number))
                   factors.push(x);
-                }
-                    
             }
             return factors;
         }
@@ -88,16 +85,10 @@
         //isAFactor function that determines if a number x is a factor of a number y
         function isAFactor(x,y) {
             remainder = y % x;
-            if (remainder == 0) {
-              console.log(x);
+            if (remainder == 0)
               return true;
-            }
-                
-            else {
-              console.log(x + " " + remainder);
-              return false
-            }
-                
+            else 
+              return false  
         }
     </script>
   </body>
