@@ -34,13 +34,15 @@
             window.alert("Update");
             firstNum = document.getElementById("first-number").value; //recieve first user-inputted number
             firstNumFactors = findFactors(firstNum); //find factors of number
-            windown.alert(printFactors(firstNumFactors)); //display the factors
+            factors = printFactors(firstNumFactors)
+            windown.alert(factors); //display the factors
             firstSum = sumFactors(firstNumFactors); //sum the factors
 
             //repeat the above process for the second number
             secondNum = document.getElementById("second-number").value;
             secondNumFactors = findFactors(secondNum);
-            window.alert(printFactors(secondNumFactors));
+            factors = printFactors(secondNumFactors);
+            window.alert(factors);
             secondSum = sumFactors(secondNumFactors);
 
             result = document.getElementById("result"); //grab result div
