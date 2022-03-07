@@ -34,15 +34,11 @@
             window.alert("Update");
             firstNum = document.getElementById("first-number").value; //recieve first user-inputted number
             firstNumFactors = findFactors(firstNum); //find factors of number
-            factors = printFactors(firstNumFactors)
-            window.alert(factors); //display the factors
             firstSum = sumFactors(firstNumFactors); //sum the factors
 
             //repeat the above process for the second number
             secondNum = document.getElementById("second-number").value;
             secondNumFactors = findFactors(secondNum);
-            factors = printFactors(secondNumFactors);
-            window.alert(factors);
             secondSum = sumFactors(secondNumFactors);
 
             result = document.getElementById("result"); //grab result div
@@ -52,6 +48,9 @@
                 result.innerHTML = "The numbers: " + firstNum + " and " + secondNum + " are not amicable";
             }
         }
+        factors1 = printFactors(firstNumFactors)
+        factors2 = printFactors(secondNumFactors);
+        window.alert(factors1 + " \n" + factors2); //pop up for the factors
 
         //printFactors function that displays all elements from an array to
         function printFactors(factorArr) {
@@ -59,7 +58,7 @@
             for (let i = 0; i < factorArr.length-2; i++) {
               string += factorArr[i] + ", ";
             }
-            string += factorArr[factorArr.length-2] + "<br>";
+            string += factorArr[factorArr.length-2];
             return string;
         }
 
