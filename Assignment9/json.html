@@ -24,23 +24,18 @@
                         artist = document.createElement('span');
                         genre = document.createElement('span');
                         year = document.createElement('span');
-                        newline = document.createElement('br');
 
                         //add information to be displayed to each of the created tags
-                        title.textContent = "Title: " + song.Title;
-                        artist.textContent = "Artist: " + song.Artist;
-                        genre.textContent = "Genre: " + song.Genre;
-                        year.textContent = "Year: " + song.Year;
+                        title.textContent = "Title: " + song.Title + "<br>";
+                        artist.textContent = "Artist: " + song.Artist + "<br>";
+                        genre.textContent = "Genre: " + song.Genre + "<br>";
+                        year.textContent = "Year: " + song.Year + "<br><br>";
 
                         //append each element to the html
                         element.appendChild(title);
-                        element.appendChild(newline);
                         element.appendChild(artist);
-                        element.appendChild(newline);
                         element.appendChild(genre);
-                        element.appendChild(newline);
                         element.appendChild(year);
-                        element.appendChild(newline);
                     }
 
                     raw = JSON.stringify(data);
