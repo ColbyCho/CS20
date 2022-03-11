@@ -10,7 +10,7 @@
 </head>
     <body>
         <div id="raw-json"></div>
-        <div id="styled-json"></div>
+        <div id="styled-json" style="font-family: Helvetica;"></div>
 	    <script>
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
             fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
@@ -24,6 +24,7 @@
                         artist = document.createElement('span');
                         genre = document.createElement('span');
                         year = document.createElement('span');
+                        newline = document.createElement('br');
 
                         //add information to be displayed to each of the created tags
                         title.textContent = "Title: " + song.Title;
@@ -33,12 +34,14 @@
 
                         //append each element to the html
                         element.appendChild(title);
+                        element.appendChild(newline);
                         element.appendChild(artist);
+                        element.appendChild(newline);
                         element.appendChild(genre);
+                        element.appendChild(newline);
                         element.appendChild(year);
+                        element.appendChild(newline);
                     }
-                    
-
 
                     raw = JSON.stringify(data);
                     document.getElementById("raw-json").innerHTML = raw;
