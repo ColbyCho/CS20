@@ -5,14 +5,31 @@
 <title>Assignment 9: JSON Song List</title>
 	<style>
 		body,html{background-color: sandybrown; text-align: center; margin: 20px;}
-        h2{font-size: 32px; padding: 0;}
-        p{font-size: 28px; padding: 0;}
+        h2{font-size: 24px; padding: 0;}
+        p{font-size: 16px; padding: 0;}
 
 	</style>
 </head>
     <body>
-        <div id="raw-json"></div>
-        <div id="styled-json" style="font-family: Helvetica;"></div>
+        <div id="raw-json">Raw JSON: <br></div>
+        <div id="styled-json" style="font-family: Helvetica;"><br></div>
+        <div id="filer">
+            <form>
+                <label for="genres">Filter songs by genre: </label>
+                <select name="genres" id="genre-selection">
+                    <option value="Pop">Pop</option>
+                    <option value="Hip Hop">Hip Hop</option>
+                    <option value="Indie">Indie</option>
+                    <option value="Alternative">Alternative</option>
+                    <option value="Indie Rock">Indie Rock</option>
+                    <option value="Electropop">Electropop</option>
+                    <option value="Soul">Soul</option>
+                    <option value="Folk">R&amp;B</option>
+                    <option value="Folk">Folk</option>
+                </select>
+                <input type="submit" value="Filter" onclick="filterSongs()">
+            </form>
+        </div>
 	    <script>
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
             fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
@@ -20,7 +37,7 @@
                 .then(data => {
                     displaySongs(data);
                     raw = JSON.stringify(data);
-                    document.getElementById("raw-json").innerHTML = raw;
+                    document.getElementById("raw-json").innerHTML += raw;
                 });
             
             function displaySongs(jsonData) {
@@ -32,6 +49,7 @@
                     artist = document.createElement('p');
                     genre = document.createElement('p');
                     year = document.createElement('p');
+                    lineBreak = document.createElement('br');
 
                     //add information to be displayed to each of the created tags
                     title.textContent = "Title: " + song.Title;
@@ -44,6 +62,7 @@
                     element.appendChild(artist);
                     element.appendChild(genre);
                     element.appendChild(year);
+                    element.appendChild(lineBreak);
                 }
             }
 	    </script>

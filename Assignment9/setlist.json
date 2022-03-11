@@ -26,12 +26,6 @@
             "Year"  : "2018"
         },
         {
-            "Title" : "California Dreamin",
-            "Artist": "The Mamas & The Papas",
-            "Genre"	: "Folk/Pop",
-            "Year"  : "1966"
-        },
-        {
             "Title" : "The Two of Us",
             "Artist": "Omar Apollo",
             "Genre"	: "R&B/Soul",
@@ -54,6 +48,12 @@
             "Artist": "Foster The People",
             "Genre"	: "Alternative/Electropop",
             "Year"  : "2011"
+        },
+        {
+            "Title" : "Brazil",
+            "Artist": "Declan McKenna",
+            "Genre"	: "Indie Rock",
+            "Year"  : "2017"
         },
         {
             "Title" : "Me No Evil",
