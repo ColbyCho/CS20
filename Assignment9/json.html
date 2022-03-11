@@ -16,32 +16,34 @@
             fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
                 .then(response => response.json())
                 .then(data => {
-                    element = document.getElementById("styled-json"); //grab the "styled-json div"
-                    set = data["setList"];
-                    for (const song of set) {
-                        //create tags for song items
-                        title = document.createElement('span');
-                        artist = document.createElement('span');
-                        genre = document.createElement('span');
-                        year = document.createElement('span');
-
-                        //add information to be displayed to each of the created tags
-                        title.textContent = "Title: " + song.Title + "\n";
-                        artist.textContent = "Artist: " + song.Artist + "\n";
-                        genre.textContent = "Genre: " + song.Genre + "\n";
-                        year.textContent = "Year: " + song.Year + "\n\n";
-
-                        //append each element to the html
-                        element.appendChild(title);
-                        element.appendChild(artist);
-                        element.appendChild(genre);
-                        element.appendChild(year);
-                    }
-
+                    displaySongs(data);
                     raw = JSON.stringify(data);
                     document.getElementById("raw-json").innerHTML = raw;
                 });
             
+            function displaySongs(jsonData) {
+                element = document.getElementById("styled-json"); //grab the "styled-json div"
+                set = jsonData["setList"];
+                for (const song of set) {
+                    //create tags for song items
+                    title = document.createElement('h2');
+                    artist = document.createElement('p');
+                    genre = document.createElement('p');
+                    year = document.createElement('p');
+
+                    //add information to be displayed to each of the created tags
+                    title.textContent = "Title: " + song.Title;
+                    artist.textContent = "Artist: " + song.Artist;
+                    genre.textContent = "Genre: " + song.Genre;
+                    year.textContent = "Year: " + song.Year;
+
+                    //append each element to the html
+                    element.appendChild(title);
+                    element.appendChild(artist);
+                    element.appendChild(genre);
+                    element.appendChild(year);
+                }
+            }
 	    </script>
     </body>
 </html>
