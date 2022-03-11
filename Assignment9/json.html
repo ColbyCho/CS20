@@ -11,10 +11,13 @@
     <body>
 	    <script>
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-            let response = fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
+            fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
+                .then(response => response.json())
+                .then(data => {
+                    setList = JSON.stringify(data);
+                    document.write(setList);
+                });
             
-            setList = JSON.stringify(response.json());
-            document.write(setList);
 	    </script>
     </body>
 </html>
