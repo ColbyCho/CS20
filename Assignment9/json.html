@@ -9,20 +9,22 @@
 	</style>
 </head>
     <body>
+        <div id="raw-json"></div>
         <div id="styled-json"></div>
 	    <script>
-            //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+            //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
             fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
-                .then(response => {
-                    setList = response.json();
-                    rawJSON = JSON.stringify(setList);
-                    document.write(rawJSON);
-                })
-                // .then(data => {
-                //     element = document.getElementById("styled-json");
-                //     title = document.createElement('h2');
-                //     title.textContent = 
-                // });
+                .then(response => response.json())
+                .then(data => {
+                    element = document.getElementById("styled-json"); //grab the "styled-json div"
+                    title = document.createElement('h2'); //create an h2 tag
+                    title.textContent = data["setList"][0]["Artist"]; //add artist information to the h2
+                    element.appendChild(title); //append this information to the html
+
+
+                    raw = JSON.stringify(data);
+                    document.getElementById("raw-json").innerHTML = raw;
+                });
             
 	    </script>
     </body>
