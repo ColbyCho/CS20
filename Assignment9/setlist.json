@@ -1,0 +1,63 @@
+ [
+    {
+        "Title" : "California Dreamin",
+        "Artist": "The Mamas & The Papas",
+        "Genre"	: "Folk/Pop",
+        "Year"  : "1966"
+    },
+    {
+        "Title" : "Heart of Glass",
+        "Artist": "Blondie",
+        "Genre"	: "Pop",
+        "Year"  : "1978"
+    },
+    {
+        "Title" : "Neon",
+        "Artist": "John Mayer",
+        "Genre"	: "Alternative/Pop",
+        "Year"  : "2001"
+    },
+    {
+        "Title" : "Babydoll",
+        "Artist": "Dominic Fike",
+        "Genre"	: "Alternative/Indie",
+        "Year"  : "2018"
+    },
+    {
+        "Title" : "California Dreamin",
+        "Artist": "The Mamas & The Papas",
+        "Genre"	: "Folk/Pop",
+        "Year"  : "1966"
+    },
+    {
+        "Title" : "The Two of Us",
+        "Artist": "Omar Apollo",
+        "Genre"	: "R&B/Soul",
+        "Year"  : "2020"
+    },
+    {
+        "Title" : "The Big Bang",
+        "Artist": "Rock Mafia",
+        "Genre"	: "Pop",
+        "Year"  : "2010"
+    },
+    {
+        "Title" : "1901",
+        "Artist": "Phoenix",
+        "Genre"	: "Alernative/Indie",
+        "Year"  : "2009"
+    },
+    {
+        "Title" : "Call It What You Want",
+        "Artist": "Foster The People",
+        "Genre"	: "Alternative/Electropop",
+        "Year"  : "2011"
+    },
+    {
+        "Title" : "Me No Evil",
+        "Artist": "Abhi The Nomad",
+        "Genre"	: "Hip Pop",
+        "Year"  : "2019"
+    }
+
+] 
