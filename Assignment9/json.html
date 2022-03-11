@@ -9,14 +9,20 @@
 	</style>
 </head>
     <body>
+        <div id="styled-json"></div>
 	    <script>
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
             fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
-                .then(response => response.json())
-                .then(data => {
-                    setList = JSON.stringify(data);
-                    document.write(setList);
-                });
+                .then(response => {
+                    setList = response.json();
+                    rawJSON = JSON.stringify(setList);
+                    document.write(rawJSON);
+                })
+                // .then(data => {
+                //     element = document.getElementById("styled-json");
+                //     title = document.createElement('h2');
+                //     title.textContent = 
+                // });
             
 	    </script>
     </body>
