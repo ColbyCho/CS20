@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Assignment 9: JSON Song List</title>
 	<style>
-		body,html{background-color: sandybrown; text-align: center; margin: 20px;}
+		body,html{background-color: sandybrown; text-align: center; color: white; margin: 20px;}
         h2{font-size: 24px; padding: 0;}
         p{font-size: 16px; padding: 0;}
 
@@ -13,22 +13,23 @@
     <body>
         <div id="raw-json">Raw JSON: <br></div>
         <div id="styled-json" style="font-family: Helvetica;"><br></div>
-        <div id="filer">
+        <div id="filter">
             <form>
                 <label for="genres">Filter songs by genre: </label>
                 <select name="genres" id="genre-selection">
-                    <option value="Pop">Pop</option>
-                    <option value="Hip Hop">Hip Hop</option>
-                    <option value="Indie">Indie</option>
-                    <option value="Alternative">Alternative</option>
-                    <option value="Indie Rock">Indie Rock</option>
-                    <option value="Electropop">Electropop</option>
-                    <option value="Soul">Soul</option>
-                    <option value="Folk">R&amp;B</option>
-                    <option value="Folk">Folk</option>
+                    <option id="Pop" id="Pop">Pop</option>
+                    <option id="Hip-Hop" value="Hip Hop">Hip Hop</option>
+                    <option id="Pop" value="Indie">Indie</option>
+                    <option id="Alternative" value="Alternative">Alternative</option>
+                    <option id="Indie Rock" value="Indie Rock">Indie Rock</option>
+                    <option id="Electropop" value="Electropop">Electropop</option>
+                    <option id="Soul" value="Soul">Soul</option>
+                    <option id="RandB" value="Folk">R&amp;B</option>
+                    <option id="Folk" value="Folk">Folk</option>
                 </select>
                 <input type="submit" value="Filter" onclick="filterSongs()">
             </form>
+            <div id="filter-results"></div>
         </div>
 	    <script>
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
@@ -63,6 +64,14 @@
                     element.appendChild(genre);
                     element.appendChild(year);
                     element.appendChild(lineBreak);
+                }
+            }
+
+            function filterSongs() {
+                if (document.getElementsByTagName("option").value == "Hip Hop") {
+                    document.getElementById("filter-results").innerHTML = "Hip Hop";
+                } else {
+                    document.getElementById("filter-results").innerHTML = "NOT Hip Hop";
                 }
             }
 	    </script>
