@@ -12,9 +12,8 @@
 	    <script>
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
             fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
-                .then(response => response.json())
-                .then(data => console.log(data));
-            setList = JSON.stringify(data);
+                .then(response => response.json());
+            setList = JSON.stringify(response);
             document.write(setList);
 	    </script>
     </body>
