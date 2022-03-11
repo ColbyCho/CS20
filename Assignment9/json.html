@@ -10,13 +10,10 @@
 </head>
     <body>
 	    <script>
-            //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
-            const url = "https://colbycho.github.io/CS20/Assignment9/setlist.json";
-            const request = new Request (url);
-            const response = fetch(request);
-            const obj = response.text();
-            setList = JSON.stringify(obj);
-            console.log(setList);
+            //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+            fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
+                .then(response => response.json())
+                .then(data => console.log(data));
 	    </script>
     </body>
 </html>
