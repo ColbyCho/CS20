@@ -20,16 +20,16 @@
                     set = data["setList"];
                     for (const song of set) {
                         //create tags for song items
-                        title = document.createElement('h4');
+                        title = document.createElement('span');
                         artist = document.createElement('span');
                         genre = document.createElement('span');
                         year = document.createElement('span');
 
                         //add information to be displayed to each of the created tags
-                        title.textContent = "Title: " + song.Title + "<br>";
-                        artist.textContent = "Artist: " + song.Artist + "<br>";
-                        genre.textContent = "Genre: " + song.Genre + "<br>";
-                        year.textContent = "Year: " + song.Year + "<br><br>";
+                        title.textContent = "Title: " + song.Title + "\n";
+                        artist.textContent = "Artist: " + song.Artist + "\n";
+                        genre.textContent = "Genre: " + song.Genre + "\n";
+                        year.textContent = "Year: " + song.Year + "\n\n";
 
                         //append each element to the html
                         element.appendChild(title);
