@@ -35,22 +35,19 @@
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
             function filter() {
                 console.log(1);
-                function getSet() {
-                    console.log(2);
-                    fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
-                    .then(response => response.json())
-                    .then(data => {
-                        if (document.getElementById("button").clicked) {
-                            console.log(3);
-                            filterSongs(data);
-                        } else {
-                            console.log(4);
-                            displaySongs(data);
-                            raw = JSON.stringify(data);
-                            document.getElementById("raw-json").innerHTML += raw;
-                        }
-                    })
-                }
+                fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
+                .then(response => response.json())
+                .then(data => {
+                    if (document.getElementById("button").clicked) {
+                        console.log(3);
+                        filterSongs(data);
+                    } else {
+                        console.log(4);
+                        displaySongs(data);
+                        raw = JSON.stringify(data);
+                        document.getElementById("raw-json").innerHTML += raw;
+                    }
+                })
             }
             
             
