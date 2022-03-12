@@ -27,32 +27,31 @@
                     <option id="RandB" value="Folk">R&amp;B</option>
                     <option id="Folk" value="Folk">Folk</option>
                 </select>
-                <input type="button" value="Filter" id="button" onclick="filterSongs()">
+                <input type="button" value="Filter" id="button" onclick="filter()">
             </form>
             <div id="filter-results"></div>
         </div>
 	    <script>
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
-            function getSet() {
-                fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
-                .then(response => response.json())
-                .then(data => {
-                    displaySongs(data);
-
-                    raw = JSON.stringify(data);
-                    document.getElementById("raw-json").innerHTML += raw;
-                    // function filterSongs() {
-                    //     selection = document.getElementById("genre-selection");
-                    //     selectedGenre = selection.options[selection.selectedIndex].value;
-                    //     filteredTitles(data, selectedGenre);
-                    // }
-                    return data;
-                })
-                
+            function filter() {
+                function getSet() {
+                    fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
+                    .then(response => response.json())
+                    .then(data => {
+                        if (document.getElementById("button").clicked) {
+                            filterSongs(data);
+                        } else {
+                            displaySongs(data);
+                            raw = JSON.stringify(data);
+                            document.getElementById("raw-json").innerHTML += raw;
+                        }
+                    })
+                }
             }
             
+            
             function displaySongs(jsonData) {
-                element = document.getElementById("styled-json"); //grab the "styled-json div"
+                element = document.getElementById("styled-json"); //grab the "styled-json" div
                 set = jsonData["setList"];
                 for (const song of set) {
                     //create tags for song items
@@ -85,23 +84,19 @@
                 }
             }
 
-            function filterSongs() { //doesn't know what data is
-                let promise =  getSet();
-                console.log(JSON.stringify(promise)); 
-                    selection = document.getElementById("genre-selection");
-                    selectedGenre = selection.options[selection.selectedIndex].value;
-                    
-                    filteredTitles(data, selectedGenre);
+            function filterSongs(jsonData) { 
+                element = document.getElementById("filter-results"); //grab the "filter-results" div
+                set = jsonData["setList"];
+
+                selection = document.getElementById("genre-selection");
+                selectedGenre = selection.options[selection.selectedIndex].value; //the selected genre
                 
+                filteredTitles(set, selectedGenre);
             }
 
-            function filteredTitles(jsonData, selGenre) {
-                console.log(jsonData);
-                element = document.getElementById("filter-results"); //grab the "styled-json div"
-                set = jsonData["setList"];
+            function filteredTitles(set, selGenre) {
                 theGenre = document.createElement('ul');
                 for (const song of set) {
-                    
                     genres = song.Genre;
                     for (const genre of genres) {
                         if (genre == selGenre) {
@@ -110,7 +105,6 @@
                             theGenre.appendChild(list);
                         }
                     }
-                    
                 }
                 element.appendChild(theGenre);
             }
