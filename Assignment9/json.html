@@ -82,6 +82,7 @@
             }
 
             function filterSongs() { //doesn't know what data is
+            console.log("promise: " + promise)
                     promise.then(data => {
                         selection = document.getElementById("genre-selection");
                         selectedGenre = selection.options[selection.selectedIndex].value;
