@@ -36,6 +36,7 @@
             fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
                 .then(response => response.json())
                 .then(data => {
+                    var data = data;
                     displaySongs(data);
                     raw = JSON.stringify(data);
                     document.getElementById("raw-json").innerHTML += raw;
