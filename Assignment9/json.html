@@ -48,14 +48,6 @@
                     //create tags for song items
                     title = document.createElement('h2');
                     artist = document.createElement('p');
-
-                    //create tags for each genre a song has
-                    genres = song.Genre;
-                    for (const genre of genres) {
-                        theGenre = document.createElement('p');
-                        theGenre.textContent = genre;
-                        element.appendChild(theGenre);
-                    }
                     
                     year = document.createElement('p');
                     lineBreak = document.createElement('br');
@@ -63,6 +55,18 @@
                     //add information to be displayed to each of the created tags
                     title.textContent = "Title: " + song.Title;
                     artist.textContent = "Artist: " + song.Artist;
+
+                    //create tags for each genre a song has
+                    genres = song.Genre;
+                    theGenre = document.createElement('p');
+                    theGenre.textContent = "Genre(s): ";
+                    theGenre += document.createElement('br');
+                    for (const genre of genres) {
+                        theGenre += document.createElement('p');
+                        theGenre.textContent = genre;
+                        element.appendChild(theGenre);
+                    }
+
                     year.textContent = "Year: " + song.Year;
 
                     //append each element to the html

@@ -13,7 +13,7 @@
         {
             "Title" : "Heart of Glass",
             "Artist": "Blondie",
-            "Genre"	: "Pop",
+            "Genre"	: ["Pop"],
             "Year"  : "1978"
         },
         {
@@ -46,7 +46,7 @@
         {
             "Title" : "The Big Bang",
             "Artist": "Rock Mafia",
-            "Genre"	: "Pop",
+            "Genre"	: ["Pop"],
             "Year"  : "2010"
         },
         {
@@ -70,13 +70,13 @@
         {
             "Title" : "Brazil",
             "Artist": "Declan McKenna",
-            "Genre"	: "Indie Rock",
+            "Genre"	: ["Indie Rock"],
             "Year"  : "2017"
         },
         {
             "Title" : "Me No Evil",
             "Artist": "Abhi The Nomad",
-            "Genre"	: "Hip Pop",
+            "Genre"	: ["Hip Pop"],
             "Year"  : "2019"
         }
     ] 
