@@ -18,7 +18,7 @@
                 <label for="genres">Filter songs by genre: </label>
                 <select name="genres" id="genre-selection">
                     <option id="Pop" id="Pop">Pop</option>
-                    <option id="Hip-Hop" value="Hip Hop">Hip Hop</option>
+                    <option id="Hip Hop" value="Hip Hop">Hip Hop</option>
                     <option id="Indie" value="Indie">Indie</option>
                     <option id="Alternative" value="Alternative">Alternative</option>
                     <option id="Indie Rock" value="Indie Rock">Indie Rock</option>
@@ -87,27 +87,37 @@
 
             function filterSongs(jsonData) { 
                 element = document.getElementById("filter-results"); //grab the "filter-results" div
+                removeChildren(element);
                 set = jsonData["setList"];
 
                 selection = document.getElementById("genre-selection");
                 selectedGenre = selection.options[selection.selectedIndex].value; //the selected genre
-                
                 filteredTitles(element, set, selectedGenre);
             }
 
             function filteredTitles(element, set, selGenre) {
                 theGenre = document.createElement('ul');
                 for (const song of set) {
+                    console.log("Song: " + song.Title);
+                    console.log("Genre: " + song.Genre);
                     genres = song.Genre;
                     for (const genre of genres) {
+                        console.log("loop genre: " + genre);
                         if (genre == selGenre) {
+                            console.log(genre);
                             list = document.createElement('li');
-                            list.innerHTML = song.Title;
+                            list.textContent = song.Title;
                             theGenre.appendChild(list);
                         }
                     }
                 }
-                // element.appendChild(theGenre);
+                element.appendChild(theGenre);
+            }
+
+            function removeChildren(parent) {
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild);
+                }
             }
 	    </script>
     </body>
