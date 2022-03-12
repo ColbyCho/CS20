@@ -86,12 +86,12 @@
 
             async function filterSongs() { //doesn't know what data is
                 let promise =  await getSet();
-                promise.then(data => {
+                console.log(promise);
                     selection = document.getElementById("genre-selection");
                     selectedGenre = selection.options[selection.selectedIndex].value;
                     console.log(data);
                     filteredTitles(data, selectedGenre);
-                })
+                
             }
 
             function filteredTitles(jsonData, selGenre) {
