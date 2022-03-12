@@ -33,8 +33,8 @@
         </div>
 	    <script>
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
-            async function getSet() {
-                return promise = await fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
+            function getSet() {
+                fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
                 .then(response => response.json())
                 .then(data => {
                     displaySongs(data);
@@ -46,6 +46,7 @@
                     //     selectedGenre = selection.options[selection.selectedIndex].value;
                     //     filteredTitles(data, selectedGenre);
                     // }
+                    return data;
                 })
                 
             }
@@ -84,12 +85,12 @@
                 }
             }
 
-            async function filterSongs() { //doesn't know what data is
-                let promise =  await getSet();
-                console.log(promise.json());
+            function filterSongs() { //doesn't know what data is
+                let promise =  getSet();
+                console.log(JSON.stringify(promise)); 
                     selection = document.getElementById("genre-selection");
                     selectedGenre = selection.options[selection.selectedIndex].value;
-                    console.log(data);
+                    
                     filteredTitles(data, selectedGenre);
                 
             }
