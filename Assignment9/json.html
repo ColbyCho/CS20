@@ -27,7 +27,7 @@
                     <option id="RandB" value="Folk">R&amp;B</option>
                     <option id="Folk" value="Folk">Folk</option>
                 </select>
-                <input type="submit" value="Filter" onclick="filterSongs()">
+                <input type="button" value="Filter" onclick="filterSongs()">
             </form>
             <div id="filter-results"></div>
         </div>
@@ -48,20 +48,26 @@
                     //create tags for song items
                     title = document.createElement('h2');
                     artist = document.createElement('p');
-                    genre = document.createElement('p');
+
+                    //create tags for each genre a song has
+                    genres = song.Genre;
+                    for (const genre of genres) {
+                        theGenre = document.createElement('p');
+                        theGenre.textContent = genre;
+                        element.appendChild(theGenre);
+                    }
+                    
                     year = document.createElement('p');
                     lineBreak = document.createElement('br');
 
                     //add information to be displayed to each of the created tags
                     title.textContent = "Title: " + song.Title;
                     artist.textContent = "Artist: " + song.Artist;
-                    genre.textContent = "Genre: " + song.Genre;
                     year.textContent = "Year: " + song.Year;
 
                     //append each element to the html
                     element.appendChild(title);
                     element.appendChild(artist);
-                    element.appendChild(genre);
                     element.appendChild(year);
                     element.appendChild(lineBreak);
                 }
