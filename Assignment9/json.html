@@ -10,7 +10,7 @@
         ul{list-style-type: none; padding-left: 0;}
 	</style>
 </head>
-    <body>
+    <body onload="filter('display')">
         <div id="raw-json"><h2>Raw JSON</h2></div><br>
         <div id="styled-json"><h2>All Songs</h2></div>
         <div id="filter">
@@ -114,6 +114,7 @@
                 element.appendChild(theGenre);
             }
 
+            //remove any remaining children, if any, of a DOM Node
             function removeChildren(parent) {
                 while (parent.firstChild) {
                     parent.removeChild(parent.firstChild);
