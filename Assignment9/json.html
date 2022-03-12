@@ -32,13 +32,12 @@
             <div id="filter-results"></div>
         </div>
 	    <script>
-            var data; //a global data variable
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
-            fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
+            var promise = fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
                 .then(response => response.json())
                 .then(data => {
-                    data = data;
                     displaySongs(data);
+
                     raw = JSON.stringify(data);
                     document.getElementById("raw-json").innerHTML += raw;
                     // function filterSongs() {
@@ -82,28 +81,32 @@
                 }
             }
 
-            function filterSongs() {
-                    selection = document.getElementById("genre-selection");
-                    selectedGenre = selection.options[selection.selectedIndex].value;
-                    filteredTitles(data, selectedGenre);
+            function filterSongs() { //doesn't know what data is
+                    promise.then(data => {
+                        selection = document.getElementById("genre-selection");
+                        selectedGenre = selection.options[selection.selectedIndex].value;
+                        filteredTitles(data, selectedGenre);
+                    })
+                
             }
 
             function filteredTitles(jsonData, selGenre) {
                 element = document.getElementById("filter-results"); //grab the "styled-json div"
                 set = jsonData["setList"];
-                
+                theGenre = document.createElement('ul');
                 for (const song of set) {
-                    theGenre = document.createElement('ul');
+                    
                     genres = song.Genre;
                     for (const genre of genres) {
                         if (genre == selGenre) {
                             list = document.createElement('li');
-                            list.textContent = genre;
+                            list.textContent = song.Title;
                             theGenre.appendChild(list);
                         }
                     }
-                    element.appendChild(theGenre);
+                    
                 }
+                element.appendChild(theGenre);
             }
 	    </script>
     </body>
