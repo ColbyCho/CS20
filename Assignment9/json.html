@@ -19,12 +19,12 @@
                 <select name="genres" id="genre-selection">
                     <option id="Pop" id="Pop">Pop</option>
                     <option id="Hip-Hop" value="Hip Hop">Hip Hop</option>
-                    <option id="Pop" value="Indie">Indie</option>
+                    <option id="Indie" value="Indie">Indie</option>
                     <option id="Alternative" value="Alternative">Alternative</option>
                     <option id="Indie Rock" value="Indie Rock">Indie Rock</option>
                     <option id="Electropop" value="Electropop">Electropop</option>
                     <option id="Soul" value="Soul">Soul</option>
-                    <option id="RandB" value="Folk">R&amp;B</option>
+                    <option id="R&B" value="R&B">R&amp;B</option>
                     <option id="Folk" value="Folk">Folk</option>
                 </select>
                 <input type="button" value="Filter" id="button" onclick="filter('button')">
@@ -102,12 +102,12 @@
                     for (const genre of genres) {
                         if (genre == selGenre) {
                             list = document.createElement('li');
-                            list.textContent = song.Title;
+                            list.innerHTML = song.Title;
                             theGenre.appendChild(list);
                         }
                     }
                 }
-                element.appendChild(theGenre);
+                // element.appendChild(theGenre);
             }
 	    </script>
     </body>
