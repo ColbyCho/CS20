@@ -27,18 +27,18 @@
                     <option id="RandB" value="Folk">R&amp;B</option>
                     <option id="Folk" value="Folk">Folk</option>
                 </select>
-                <input type="button" value="Filter" id="button" onclick="filter()">
+                <input type="button" value="Filter" id="button" onclick="filter('button')">
             </form>
             <div id="filter-results"></div>
         </div>
 	    <script>
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
-            function filter() {
+            function filter(mode) {
                 console.log(1);
                 fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
                 .then(response => response.json())
                 .then(data => {
-                    if (document.getElementById("button").clicked) {
+                    if (mode == "button") {
                         console.log(3);
                         filterSongs(data);
                     } else {
