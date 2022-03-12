@@ -48,30 +48,28 @@
                     //create tags for song items
                     title = document.createElement('h2');
                     artist = document.createElement('p');
-                    
+                    theGenre = document.createElement('ul');
                     year = document.createElement('p');
                     lineBreak = document.createElement('br');
 
                     //add information to be displayed to each of the created tags
                     title.textContent = "Title: " + song.Title;
                     artist.textContent = "Artist: " + song.Artist;
+                    year.textContent = "Year: " + song.Year;
 
                     //create tags for each genre a song has
                     genres = song.Genre;
-                    theGenre = document.createElement('p');
                     theGenre.textContent = "Genre(s): ";
-                    // theGenre += document.createElement('br');
                     for (const genre of genres) {
-                        // theGenre += document.createElement('p');
-                        theGenre.textContent += genre;
-                        element.appendChild(theGenre);
+                        list = document.createElement('li');
+                        list.textContent = genre;
+                        theGenre.appendChild(list);
                     }
-
-                    year.textContent = "Year: " + song.Year;
 
                     //append each element to the html
                     element.appendChild(title);
                     element.appendChild(artist);
+                    element.appendChild(theGenre);
                     element.appendChild(year);
                     element.appendChild(lineBreak);
                 }
