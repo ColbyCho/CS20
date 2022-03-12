@@ -92,10 +92,10 @@
                 selection = document.getElementById("genre-selection");
                 selectedGenre = selection.options[selection.selectedIndex].value; //the selected genre
                 
-                filteredTitles(set, selectedGenre);
+                filteredTitles(element, set, selectedGenre);
             }
 
-            function filteredTitles(set, selGenre) {
+            function filteredTitles(element, set, selGenre) {
                 theGenre = document.createElement('ul');
                 for (const song of set) {
                     genres = song.Genre;
@@ -107,7 +107,7 @@
                         }
                     }
                 }
-                element.parentNode.replaceChild(theGenre, theGenre);
+                element.appendChild(theGenre);
             }
 	    </script>
     </body>
