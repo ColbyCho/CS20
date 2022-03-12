@@ -32,11 +32,12 @@
             <div id="filter-results"></div>
         </div>
 	    <script>
+            var data; //a global data variable
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
             fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
                 .then(response => response.json())
                 .then(data => {
-                    var data = data;
+                    data = data;
                     displaySongs(data);
                     raw = JSON.stringify(data);
                     document.getElementById("raw-json").innerHTML += raw;
