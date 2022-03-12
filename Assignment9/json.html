@@ -4,16 +4,19 @@
 <meta charset="utf-8">
 <title>Assignment 9: JSON Song List</title>
 	<style>
-		body,html{background-color: sandybrown; text-align: center; color: white; margin: 20px;}
+		body,html{font-family: Helvetica; background-color: sandybrown; text-align: center; color: white; margin: 20px;}
         h2{font-size: 24px; padding: 0;}
         p{font-size: 16px; padding: 0;}
-        ul{list-style-type: none;}
+        ul{list-style-type: none; padding-left: 0;}
+        form{font-size: 20px;}
+        /* option{Font-size: 20px;}
+        #button{font-size: 20px;} */
 
 	</style>
 </head>
     <body>
-        <div id="raw-json">Raw JSON: <br></div>
-        <div id="styled-json" style="font-family: Helvetica;"><br></div>
+        <div id="raw-json"><h2>Raw JSON</h2><br></div>
+        <div id="styled-json"><h2>All Songs</h2><br></div>
         <div id="filter">
             <form>
                 <label for="genres">Filter songs by genre: </label>
@@ -28,7 +31,7 @@
                     <option id="RandB" value="Folk">R&amp;B</option>
                     <option id="Folk" value="Folk">Folk</option>
                 </select>
-                <input type="button" value="Filter" onclick="filterSongs()">
+                <input type="button" value="Filter" id="button" onclick="filterSongs()">
             </form>
             <div id="filter-results"></div>
         </div>
@@ -47,7 +50,7 @@
                 set = jsonData["setList"];
                 for (const song of set) {
                     //create tags for song items
-                    title = document.createElement('h2');
+                    title = document.createElement('h4');
                     artist = document.createElement('p');
                     theGenre = document.createElement('ul');
                     year = document.createElement('p');
