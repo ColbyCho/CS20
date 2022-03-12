@@ -86,7 +86,7 @@
 
             async function filterSongs() { //doesn't know what data is
                 let promise =  await getSet();
-                console.log(promise);
+                console.log(promise.json());
                     selection = document.getElementById("genre-selection");
                     selectedGenre = selection.options[selection.selectedIndex].value;
                     console.log(data);
