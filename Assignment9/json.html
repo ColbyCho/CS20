@@ -39,6 +39,11 @@
                     displaySongs(data);
                     raw = JSON.stringify(data);
                     document.getElementById("raw-json").innerHTML += raw;
+                    function filterSongs() {
+                        selection = document.getElementById("genre-selection");
+                        selectedGenre = selection.options[selection.selectedIndex].value;
+                        filteredTitles(data, selectedGenre);
+                    }
                 });
             
             function displaySongs(jsonData) {
@@ -75,14 +80,22 @@
                 }
             }
 
-            function filterSongs() {
-                selection = document.getElementById("genre-selection");
-                selectedGenre = selection.options[selection.selectedIndex];
-                console.log(selectedGenre);
-                // switch(selectedGenre) {
-                //     case "Pop": 
-
-                // }
+            function filteredTitles(jsonData, selGenre) {
+                element = document.getElementById("filter-results"); //grab the "styled-json div"
+                set = jsonData["setList"];
+                
+                for (const song of set) {
+                    theGenre = document.createElement('ul');
+                    genres = song.Genre;
+                    for (const genre of genres) {
+                        if (genre == selGenre) {
+                            list = document.createElement('li');
+                            list.textContent = genre;
+                            theGenre.appendChild(list);
+                        }
+                    }
+                    element.appendChild(theGenre);
+                }
             }
 	    </script>
     </body>
