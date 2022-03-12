@@ -84,16 +84,15 @@
                 }
             }
 
-            function filterSongs() { //doesn't know what data is
-            console.log("promise: " + promise)
-            let promise = await getSet();
-                    promise.then(data => {
-                        selection = document.getElementById("genre-selection");
-                        selectedGenre = selection.options[selection.selectedIndex].value;
-                        console.log(data);
-                        filteredTitles(data, selectedGenre);
-                    })
-                
+            async function filterSongs() { //doesn't know what data is
+                console.log("promise: " + promise)
+                let promise =  await getSet();
+                promise.then(data => {
+                    selection = document.getElementById("genre-selection");
+                    selectedGenre = selection.options[selection.selectedIndex].value;
+                    console.log(data);
+                    filteredTitles(data, selectedGenre);
+                })
             }
 
             function filteredTitles(jsonData, selGenre) {
