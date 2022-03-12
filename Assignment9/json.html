@@ -4,13 +4,20 @@
 <meta charset="utf-8">
 <title>Assignment 9: JSON Song List</title>
 	<style>
-		body,html{font-family: Helvetica; background-color: sandybrown; text-align: center; color: white; margin: 20px;}
+		body,html{font-family: Helvetica; background-color: rgb(146, 107, 107); text-align: center; color: white; margin: 20px;}
         h2{font-size: 24px; padding: 0;}
         p{font-size: 16px; padding: 0;}
         ul{list-style-type: none; padding-left: 0;}
+        label{font-size: 16px;}
+        #raw-json{border-radius: 5px; border: white solid; background-color: rgb(80, 55, 55); padding-top: 10px; padding-left: 30px; padding-right: 30px; padding-bottom: 40px;}
+        #styled-json{border-radius: 5px; border: white solid; background-color: rgb(126, 79, 79); padding: 10px; margin-bottom: 20px;}
+        #filter{border-radius: 5px; border: white solid; background-color: rgb(190, 114, 114); padding: 10px;}
 	</style>
 </head>
     <body onload="filter('display')">
+        <header>
+            <h1>Sunny and the Lads</h1>
+        </header>
         <div id="raw-json"><h2>Raw JSON</h2></div><br>
         <div id="styled-json"><h2>All Songs</h2></div>
         <div id="filter">
@@ -34,15 +41,12 @@
 	    <script>
             //Accessing a JSON file, acknowledgements: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
             function filter(mode) {
-                console.log(1);
                 fetch("https://colbycho.github.io/CS20/Assignment9/setlist.json")
                 .then(response => response.json())
                 .then(data => {
-                    if (mode == "button") {
-                        console.log(3);
+                    if (mode == "button") { //executed only if filter button is clicked
                         filterSongs(data);
                     } else {
-                        console.log(4);
                         displaySongs(data);
                         raw = JSON.stringify(data);
                         document.getElementById("raw-json").innerHTML += raw;
@@ -50,7 +54,7 @@
                 })
             }
             
-            
+            //displays all of the song data from the JSON file
             function displaySongs(jsonData) {
                 element = document.getElementById("styled-json"); //grab the "styled-json" div
                 set = jsonData["setList"];
@@ -85,6 +89,7 @@
                 }
             }
 
+            //driver function for filtering through songs with respect to their genres
             function filterSongs(jsonData) { 
                 element = document.getElementById("filter-results"); //grab the "filter-results" div
                 removeChildren(element);
@@ -95,16 +100,13 @@
                 filteredTitles(element, set, selectedGenre);
             }
 
-            function filteredTitles(element, set, selGenre) {
+            //helper function of filterSongs which iterates over the JSON file to find songs with the user-specified genre
+            function filteredTitles(element, set, selGenre) { 
                 theGenre = document.createElement('ul');
                 for (const song of set) {
-                    console.log("Song: " + song.Title);
-                    console.log("Genre: " + song.Genre);
                     genres = song.Genre;
                     for (const genre of genres) {
-                        console.log("loop genre: " + genre);
                         if (genre == selGenre) {
-                            console.log(genre);
                             list = document.createElement('li');
                             list.textContent = song.Title;
                             theGenre.appendChild(list);
