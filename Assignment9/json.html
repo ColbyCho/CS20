@@ -62,7 +62,6 @@
                     theGenre.textContent = "Genre(s): ";
                     for (const genre of genres) {
                         list = document.createElement('li');
-                        console.log(genre.length + " " + genre[genre.length-1]);
                         list.textContent = genre;
                         theGenre.appendChild(list);
                     }
@@ -77,9 +76,13 @@
             }
 
             function filterSongs() {
-                selection = document.getElementsById("genre-selection");
+                selection = document.getElementById("genre-selection");
                 selectedGenre = selection.options[selection.selectedIndex];
                 console.log(selectedGenre);
+                // switch(selectedGenre) {
+                //     case "Pop": 
+
+                // }
             }
 	    </script>
     </body>
