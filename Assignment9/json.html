@@ -77,11 +77,9 @@
             }
 
             function filterSongs() {
-                if (document.getElementsByTagName("option").value == "Hip Hop") {
-                    document.getElementById("filter-results").innerHTML = "Hip Hop";
-                } else {
-                    document.getElementById("filter-results").innerHTML = "NOT Hip Hop";
-                }
+                selection = document.getElementsById("genre-selection");
+                selectedGenre = selection.options[selection.selectedIndex];
+                console.log(selectedGenre);
             }
 	    </script>
     </body>
