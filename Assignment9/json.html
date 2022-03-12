@@ -27,7 +27,7 @@
                     <option id="RandB" value="Folk">R&amp;B</option>
                     <option id="Folk" value="Folk">Folk</option>
                 </select>
-                <input type="button" value="Filter" id="button" onclick="displaySongs()">
+                <input type="button" value="Filter" id="button" onclick="filterSongs()">
             </form>
             <div id="filter-results"></div>
         </div>
@@ -40,11 +40,11 @@
                     displaySongs(data);
                     raw = JSON.stringify(data);
                     document.getElementById("raw-json").innerHTML += raw;
-                    function filterSongs() {
-                        selection = document.getElementById("genre-selection");
-                        selectedGenre = selection.options[selection.selectedIndex].value;
-                        filteredTitles(data, selectedGenre);
-                    }
+                    // function filterSongs() {
+                    //     selection = document.getElementById("genre-selection");
+                    //     selectedGenre = selection.options[selection.selectedIndex].value;
+                    //     filteredTitles(data, selectedGenre);
+                    // }
                 });
             
             function displaySongs(jsonData) {
@@ -79,6 +79,12 @@
                     element.appendChild(year);
                     element.appendChild(lineBreak);
                 }
+            }
+
+            function filterSongs() {
+                    selection = document.getElementById("genre-selection");
+                    selectedGenre = selection.options[selection.selectedIndex].value;
+                    filteredTitles(data, selectedGenre);
             }
 
             function filteredTitles(jsonData, selGenre) {
