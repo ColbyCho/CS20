@@ -85,12 +85,14 @@
                     promise.then(data => {
                         selection = document.getElementById("genre-selection");
                         selectedGenre = selection.options[selection.selectedIndex].value;
+                        console.log(data);
                         filteredTitles(data, selectedGenre);
                     })
                 
             }
 
             function filteredTitles(jsonData, selGenre) {
+                console.log(jsonData);
                 element = document.getElementById("filter-results"); //grab the "styled-json div"
                 set = jsonData["setList"];
                 theGenre = document.createElement('ul');
