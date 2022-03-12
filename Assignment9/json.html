@@ -60,10 +60,10 @@
                     genres = song.Genre;
                     theGenre = document.createElement('p');
                     theGenre.textContent = "Genre(s): ";
-                    theGenre += document.createElement('br');
+                    // theGenre += document.createElement('br');
                     for (const genre of genres) {
-                        theGenre += document.createElement('p');
-                        theGenre.textContent = genre;
+                        // theGenre += document.createElement('p');
+                        theGenre.textContent += genre;
                         element.appendChild(theGenre);
                     }
 
