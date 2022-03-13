@@ -11,18 +11,36 @@
         footer{margin-top: 20px;}
     </style>
   </head>
-  <body onload="loadFDA()">
+  <body onload="fetchAPI()">
     <header>
         <h1>FDA Food Recalls</h1>
+        <img src="openFDA.png" alt="openFDA logo" style="height: 100px;">
         <p>The following API, called openFDA, is an Elasticsearch-based API that provides users with public FDA data about drugs, devices, and foods. Below, I have included information for five food products that have been recalled by the FDA.</p>
+        <p><strong>Source: </strong>https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/</p>
+        <p><strong>Options: </strong>The only available option that openFDA provides is a limit (key) on the number (value) of food product recall entries requested by the user. In this case, I have selected 5 as my limit because I only wanted to display five entries.</p>
+        <p><strong>Applications: </strong>This API might be useful for services who are supplying restaurant industry businesses with information about food sourcing. This API might also be useful for public domains whose goal is to inform people on food safety; particularly regarding the kinds of products to look out for.</p>
     </header>
-    <div id="disclaimer" onload="fetchAPI()"></div>
+    <div id="disclaimer-text"></div>
     <div id="product-container">
         <h2>Product Descriptions</h2>
         <div id="product-description"></div>
     </div>
     <footer>Copyright &copy 2022; FDA Food Recalls</footer>
     <script>
+        //Acknowledgements: fetch example (from lecture)
+        function fetchAPI() {
+            res = fetch("https://api.fda.gov/food/enforcement.json?limit=5")
+                .then (res => res.text())
+                .then (data => {
+                   data = JSON.parse(data);
+                   disclaimer = data["meta"].disclaimer;
+                   console.log("DISCLAIMER: " + disclaimer);
+                   document.getElementById("disclaimer-text").innerHTML = "<strong>DISCLAIMER: </strong>" + disclaimer + "<br><br>"; //Here, I fetch the API and display the FDA's disclaimer information
+                   loadFDA();
+                })
+                .catch (error => console.log(error))
+        } 
+
         //Acknowledgements: json_ajax_example.html (from lecture) - how to make API request using AJAX
         function loadFDA() {
 			/* Step 1: Make instance of XHR object...
@@ -61,18 +79,6 @@
 			request.send();
 			console.log("4 request sent");
 		}
-
-        //Acknowledgements: fetch example (from lecture)
-        function fetchAPI() {
-            res = fetch("https://api.fda.gov/food/enforcement.json?limit=5")
-                .then (res => res.text())
-                .then (data => {
-                   disclaimer = data["meta"].disclaimer;
-                   document.getElementById("disclaimer").innerHTML = disclaimer; //Here, I fetch the API and display the FDA's disclaimer information
-                })
-                .catch (error => console.log(error))
-        } 
-        
     </script>
   </body>
 </html>
