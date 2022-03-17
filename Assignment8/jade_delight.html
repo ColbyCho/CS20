@@ -100,7 +100,7 @@ function td(content, className="")
 </script>
 <script>	
 		subtotal = [];
-		var count = 0;
+		opt = [];
 		//add getTotal() function to select tags to trigger function
 		for (let i = 0; i < 5; i++) {
 			selection = document.getElementsByName("quan" + i + "");
@@ -181,32 +181,56 @@ function td(content, className="")
 			var validPhone7 = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{1}$/im;
 			return (validPhone10.test(number) || validPhone7.test(number));
 		}
+
+		//function for counting total number of items ordered
+		function itemCounter() {
+			var quant = 0;
+			for (let i = 0; i < 5; i++) {
+				select = document.getElementsByName("quan" + index + "");
+				quant += select[0].options[select[0].selectedIndex].value;
+			}
+			console.log(quant);
+			return quant;
+		}
 		
 		//validates form input (required fields are filled and valid phone numbers)
+		valid = true;
 		submit = document.querySelectorAll("input[type=button]");
 		submit[0].addEventListener("click", function() {
 			lname = document.getElementsByName("lname");
 			street = document.getElementsByName("street");
 			city = document.getElementsByName("city");
 			phone = document.getElementsByName("phone");
-			if (lname[0].value == "" || phone[0].value == "")
+			if (lname[0].value == "" || phone[0].value == "") {
 				alert("Please fill out the required fields");
-			if (phone[0].value != "" && !validatePhone(phone[0].value))
+				valid = false;
+			}
+			if (phone[0].value != "" && !validatePhone(phone[0].value)) {
 				alert("Please enter a valid phone number");
-			if (PorD[1].checked && street[0].value == "" && city[0].value == "")
+				valid = false;
+			}
+			if (PorD[1].checked && street[0].value == "" && city[0].value == "") {
 				alert("Please fill out the street and city fields");
-			if (document.getElementById("total").value == 0) 
+				valid = false;
+			}
+			// if (document.getElementById("total").value == 0) {
+			// 	alert("Please order at least one menu item");
+			// 	valid = false;
+			// }
+			if (itemCounter() == 0) {
 				alert("Please order at least one menu item");
-			
-			//if the form is valid
+				valid = false;
+			}
+				
+			if (valid = true) { //if the form is valid
 			alert("Thank you for your order.");
-			newWindowObj = window.open(" ", "orderSummary");
+			newWindowObj = window.open("https://colbycho.github.io/CS20/Assignment8/summary.html", "orderSummary");
 
 			if (PorD[0].checked)
 				alert("Your expected pickup time: " + p_or_dTime(15));
 			else 
 				alert("Your expected delivery time: " + p_or_dTime(30));
-
+			}
 			
 
 		});
