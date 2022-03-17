@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jade Delight</title>
+<style>
+	body {text-align: left;}
+	p {margin-bottom: 10px;}
+	label {display: inline-block; width: 150px;}
+	input {padding: 5px 10px;}
+</style>
+</head>
+
+<body>
+<script>
+
+function MenuItem(name, cost)
+{
+	this.name = name;
+	this.cost=cost;
+}
+
+menuItems = new Array(
+	new MenuItem("Chicken Chop Suey", 4.5),
+	new MenuItem("Sweet and Sour Pork", 6.25),
+	new MenuItem("Shrimp Lo Mein", 6.25),
+	new MenuItem("Moo Shi Chicken", 7.5),
+	new MenuItem("Fried Rice", 2.85)
+);
+
+function makeSelect(name, minRange, maxRange)
+{
+	var t= "";
+	t = "<select name='" + name + "' size='1'>";
+	for (j=minRange; j<=maxRange; j++)
+	   t += "<option>" + j + "</option>";
+	t+= "</select>"; 
+	return t;
+}
+
+function td(content, className="")
+{
+	return "<td class = '" + className + "'>" + content + "</td>";
+}
+	
+</script>
+
+<h1>Jade Delight</h1>
+<form>
+
+<p class="userInfo"><label>First Name:</label> <input type="text"  name='fname' /></p>
+<p class="userInfo"><label>Last Name*:</label>  <input type="text"  name='lname' /></p>
+<p class="userInfo address"><label>Street*:</label> <input type="text" name='street' /></p>
+<p class="userInfo address"><label>City*:</label> <input type="text" name='city' /></p>
+<p class="userInfo"><label>Phone*:</label> <input type="text"  name='phone' /></p>
+<p> 
+	<input type="radio"  name="p_or_d" value = "pickup" checked="checked"/>Pickup  
+	<input type="radio"  name='p_or_d' value = 'delivery'/>
+	Delivery
+</p>
+<table border="0" cellpadding="3">
+  <tr>
+    <th>Select Item</th>
+    <th>Item Name</th>
+    <th>Cost Each</th>
+    <th>Total Cost</th>
+  </tr>
+<script>
+
+  var s = "";
+  for (i=0; i< menuItems.length; i++)
+  {
+	  s += "<tr>";
+	  s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
+	  s += td(menuItems[i].name, "itemName");
+	  s += td("$" +menuItems[i].cost.toFixed(2), "cost");
+	  s += td("$<input type='text' name='cost'/>", "totalCost");
+	  s+= "</tr>";
+  }
+  document.writeln(s);
+
+</script>
+</table>
+<p class="subtotal totalSection"><label>Subtotal:</label> 
+   $ <input type="text"  name='subtotal' id="subtotal" />
+</p>
+<p class="tax totalSection"><label>Mass tax 6.25%:</label>
+  $ <input type="text"  name='tax' id="tax" />
+</p>
+<p class="total totalSection"><label>Total:</label> $ <input type="text"  name='total' id="total" />
+</p>
+
+<input type = "button" value = "Submit Order" />
+
+</form>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous">
+</script>
+<script>	
+		subtotal = [];
+
+		//add getTotal() function to select tags to trigger function
+		for (let i = 0; i < 5; i++) {
+			selection = document.getElementsByName("quan" + i + "");
+			selection[0].setAttribute("onchange", "getTotal(" + i + ")");
+		}
+
+		//multiplies the user-selected quantity with the menuItem price for each menu item
+		function getTotal(index) {
+			selection = document.getElementsByName("quan" + index + "");
+			quantity = selection[0].options[selection[0].selectedIndex].value;
+			// console.log(quantity);
+			total = quantity * menuItems[index].cost;
+			// console.log(total);
+			totalCost = document.getElementsByName("cost");
+			totalCost[index].value = total.toFixed(2);
+			subtotal.push(total);
+			updateSubtotal(subtotal);
+		}
+
+		//adds the current totals to produce a subtotal
+		function updateSubtotal(subtotal) {
+			var sub = 0
+			for (let j = 0; j < subtotal.length; j++) {
+				// console.log("in loop: " + subtotal[j]);
+				sub += subtotal[j];
+			}
+			document.getElementById("subtotal").value = sub.toFixed(2);
+			tax = sub * .0625;
+			document.getElementById("tax").value = tax.toFixed(2);
+			final = sub + tax;
+			document.getElementById("total").value = final.toFixed(2);
+		}
+
+		//calculates pickup or delivery time depending on user selection
+		function p_or_dTime(addedMin) {
+			date = new Date(); //Date class, acknowledgements: https://tecadmin.net/get-current-date-time-javascript/
+			hours = date.getHours() % 12;
+			minutes = date.getMinutes(); 
+			totalMin = minutes + addedMin;
+			if (totalMin > 59) {
+				if ((hours + 1) > 12) {
+					if ((totalMin % 60) < 10)
+						return (1 + ":0" + (totalMin % 60));
+					else
+						return (1 + ":" + (totalMin % 60));
+				} else {
+					if ((totalMin % 60) < 10)
+						return ((hours + 1) + ":0" + (totalMin % 60));
+					else
+						return ((hours + 1) + ":" + (totalMin % 60));
+				}
+			} else
+				return (hours + ":" + totalMin);
+		}
+
+		//toggle between delivery and pickup modes
+		PorD = document.querySelectorAll('input[type=radio][name="p_or_d"]');
+		deliveryInfo = document.querySelectorAll("p[class='userInfo address']");
+		deliveryInfo[0].style.display = "none";
+		deliveryInfo[1].style.display = "none";
+		
+		PorD.forEach(radio => radio.addEventListener('change', function() {
+			if (PorD[0].checked) { //remove street and city input if user is picking up
+				// console.log("pickup is checked");
+				deliveryInfo[0].style.display = "none";
+				deliveryInfo[1].style.display = "none";
+			} else {
+				// console.log("delivery is checked");
+				deliveryInfo[0].style.display = "block";
+				deliveryInfo[1].style.display = "block";
+			}
+		}));
+
+		//Acknowledgements (testing for valid 7 or 10 digit phone numbers): https://stackoverflow.com/questions/4338267/validate-phone-number-with-javascript
+		function validatePhone(number) {
+			var validPhone10 = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/im;
+			var validPhone7 = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{1}$/im;
+			return (validPhone10.test(number) || validPhone7.test(number));
+		}
+		
+		//validates form input (required fields are filled and valid phone numbers)
+		submit = document.querySelectorAll("input[type=button]");
+		submit[0].addEventListener("click", function() {
+			lname = document.getElementsByName("lname");
+			phone = document.getElementsByName("phone");
+			if (lname[0].value == "" || phone[0].value == "")
+				alert("Please fill out the required fields");
+			if (phone[0].value != "" && !validatePhone(phone[0].value))
+				alert("Please enter a valid phone number");
+			if (PorD[0].checked)
+				alert("Your expected pickup time: " + p_or_dTime(15));
+			else 
+				alert("Your expected delivery time: " + p_or_dTime(30));
+
+			
+
+		});
+
+</script>
+</body>
+</html>
