@@ -99,8 +99,8 @@ function td(content, className="")
   crossorigin="anonymous">
 </script>
 <script>	
-		subtotal = [];
-		opt = [];
+		itemTotals = [0, 0, 0, 0, 0]; //an array for the item totals
+
 		//add getTotal() function to select tags to trigger function
 		for (let i = 0; i < 5; i++) {
 			selection = document.getElementsByName("quan" + i + "");
@@ -117,16 +117,19 @@ function td(content, className="")
 			// console.log(total);
 			totalCost = document.getElementsByName("cost");
 			totalCost[index].value = total.toFixed(2);
-			subtotal.push(total);
-			updateSubtotal(subtotal);
+
+			itemTotals.splice(index, 1, total);
+			// console.log("itemTotals array: " + itemTotals);
+			updateSubtotal(itemTotals);
 		}
 
 		//adds the current totals to produce a subtotal
 		function updateSubtotal(subtotal) {
-			var sub = 0
-			for (let j = 0; j < subtotal.length; j++) {
+			var sub = 0;
+			for (let j = 0; j < 5; j++) { //adding up itemTotals
 				// console.log("in loop: " + subtotal[j]);
 				sub += subtotal[j];
+				// console.log("sub in loop: " + sub);
 			}
 			document.getElementById("subtotal").value = sub.toFixed(2);
 			tax = sub * .0625;
@@ -186,15 +189,25 @@ function td(content, className="")
 		function itemCounter() {
 			var quant = 0;
 			for (let i = 0; i < 5; i++) {
-				select = document.getElementsByName("quan" + index + "");
+				select = document.getElementsByName("quan" + i + "");
 				quant += select[0].options[select[0].selectedIndex].value;
 			}
-			console.log(quant);
 			return quant;
+		}
+
+		//function for getting items ordered
+		function getItems() {
+			items = [];
+			var quant = 0;
+			for (let i = 0; i < 5; i++) {
+				select = document.getElementsByName("quan" + i + "");
+				quant = select[0].options[select[0].selectedIndex].value;
+				items.push(quant);
+			}
+			return items;
 		}
 		
 		//validates form input (required fields are filled and valid phone numbers)
-		valid = true;
 		submit = document.querySelectorAll("input[type=button]");
 		submit[0].addEventListener("click", function() {
 			lname = document.getElementsByName("lname");
@@ -203,33 +216,23 @@ function td(content, className="")
 			phone = document.getElementsByName("phone");
 			if (lname[0].value == "" || phone[0].value == "") {
 				alert("Please fill out the required fields");
-				valid = false;
 			}
-			if (phone[0].value != "" && !validatePhone(phone[0].value)) {
+			else if (phone[0].value != "" && !validatePhone(phone[0].value)) {
 				alert("Please enter a valid phone number");
-				valid = false;
 			}
-			if (PorD[1].checked && street[0].value == "" && city[0].value == "") {
+			else if (PorD[1].checked && street[0].value == "" && city[0].value == "") {
 				alert("Please fill out the street and city fields");
-				valid = false;
 			}
-			// if (document.getElementById("total").value == 0) {
-			// 	alert("Please order at least one menu item");
-			// 	valid = false;
-			// }
-			if (itemCounter() == 0) {
+			else if (itemCounter() == 0) {
 				alert("Please order at least one menu item");
-				valid = false;
-			}
-				
-			if (valid = true) { //if the form is valid
-			alert("Thank you for your order.");
-			newWindowObj = window.open("https://colbycho.github.io/CS20/Assignment8/summary.html", "orderSummary");
-
-			if (PorD[0].checked)
-				alert("Your expected pickup time: " + p_or_dTime(15));
-			else 
-				alert("Your expected delivery time: " + p_or_dTime(30));
+			} else { //if the form is valid
+				alert("Thank you for your order.");
+				newWindowObj = window.open("https://colbycho.github.io/CS20/Assignment8/summary.html", "orderSummary");
+				newWindowObj.document.getElementById("items").innerHTML = 
+				if (PorD[0].checked)
+					alert("Your expected pickup time: " + p_or_dTime(15));
+				else 
+					alert("Your expected delivery time: " + p_or_dTime(30));
 			}
 			
 
