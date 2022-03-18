@@ -195,7 +195,7 @@ function td(content, className="")
 			return quant;
 		}
 
-		//function for getting items ordered
+		//function for getting the number of items ordered
 		function getItems() {
 			items = [];
 			var quant = 0;
@@ -227,8 +227,13 @@ function td(content, className="")
 				alert("Please order at least one menu item");
 			} else { //if the form is valid
 				alert("Thank you for your order.");
-				newWindowObj = window.open("https://colbycho.github.io/CS20/Assignment8/summary.html", "orderSummary");
-				newWindowObj.document.getElementById("items").innerHTML = 
+				newWindowObj = window.open("https://colbycho.github.io/CS20/Assignment8/summary.html");
+				Numitems = getItems();
+				var itemString = "";
+				for (let i = 0; i < 5; i++) {
+					itemString += menuItems[i].name + " x $" + Numitems[i] + " = $" + (Numitems[i] * menuItems[i].cost) + "<br>";
+				}
+				newWindowObj.document.getElementById("items").innerHTML = itemString;
 				if (PorD[0].checked)
 					alert("Your expected pickup time: " + p_or_dTime(15));
 				else 
