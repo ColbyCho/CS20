@@ -100,7 +100,6 @@ function td(content, className="")
 </script>
 <script>	
 		itemTotals = [0, 0, 0, 0, 0]; //an array for the item totals
-
 		//add getTotal() function to select tags to trigger function
 		for (let i = 0; i < 5; i++) {
 			selection = document.getElementsByName("quan" + i + "");
@@ -123,7 +122,7 @@ function td(content, className="")
 			updateSubtotal(itemTotals);
 		}
 
-		//adds the current totals to produce a subtotal
+		//adds the current totals to produce a subtotal, tax, and total. Also adds these respective values to an array to be used later
 		function updateSubtotal(subtotal) {
 			var sub = 0;
 			for (let j = 0; j < 5; j++) { //adding up itemTotals
@@ -227,20 +226,29 @@ function td(content, className="")
 				alert("Please order at least one menu item");
 			} else { //if the form is valid
 				alert("Thank you for your order.");
-				newWindowObj = window.open("https://colbycho.github.io/CS20/Assignment8/summary.html");
+				
 				Numitems = getItems();
 				var itemString = "";
 				for (let i = 0; i < 5; i++) {
 					itemString += menuItems[i].name + " x $" + Numitems[i] + " = $" + (Numitems[i] * menuItems[i].cost) + "<br>";
 				}
-				newWindowObj.document.getElementById("items").innerHTML = itemString;
-				if (PorD[0].checked)
-					alert("Your expected pickup time: " + p_or_dTime(15));
-				else 
-					alert("Your expected delivery time: " + p_or_dTime(30));
-			}
-			
+				displaySub = document.getElementById("subtotal").value;
+				displayTax = document.getElementById("tax").value;
+				displayTotal = document.getElementById("total").value;
+				totalPrices = "Subtotal: " + displaySub + "<br>" + "Tax: " + displayTax + "<br>" + "Total: " + displayTotal + "<br>";
 
+				//open new window and supply user with final order details
+				newWindowObj = window.open("https://colbycho.github.io/CS20/Assignment8/summary.html");
+				// newWindowObj = window.open("summary.html");
+				newWindowObj.onload = function() {
+					newWindowObj.document.getElementById("items").innerHTML = itemString;
+					newWindowObj.document.getElementById("totals").innerHTML = totalPrices;
+					if (PorD[0].checked)
+						newWindowObj.document.getElementById("time").innerHTML = "Your expected pickup time: " + p_or_dTime(15);
+					else 
+						newWindowObj.document.getElementById("time").innerHTML = "Your expected delivery time: " + p_or_dTime(30);		
+				};
+			}
 		});
 
 </script>
