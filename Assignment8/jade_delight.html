@@ -242,7 +242,7 @@ function td(content, className="")
 			else if (phone[0].value != "" && !validatePhone(phone[0].value)) {
 				alert("Please enter a valid phone number");
 			}
-			else if (PorD[1].checked && street[0].value == "" && city[0].value == "") {
+			else if (PorD[1].checked && (street[0].value == "" || city[0].value == "")) {
 				alert("Please fill out the street and city fields");
 			}
 			else if (itemCounter() == 0) {
